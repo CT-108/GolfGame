@@ -9,7 +9,9 @@ public class BallControl : MonoBehaviour
     public Rigidbody2D rb;
     public LineRenderer lr;
 
-    Vector3 dragStartPos;
+
+
+    Vector2 dragStartPos;
     Touch touch;
 
     private void Update()
@@ -34,14 +36,14 @@ public class BallControl : MonoBehaviour
     private void DragStart()
     {
         dragStartPos = Camera.main.ScreenToWorldPoint(touch.position);
-        dragStartPos.z = 0f;
+        //dragStartPos.z = 0f;
         lr.positionCount = 1;
         lr.SetPosition(0, dragStartPos);
     }
     private void Dragging()
     {
-        Vector3 draggingPos = Camera.main.ScreenToWorldPoint(touch.position);
-        dragStartPos.z = 0f;
+        Vector2 draggingPos = Camera.main.ScreenToWorldPoint(touch.position);
+        //dragStartPos.z = 0f;
         lr.positionCount = 2;
         lr.SetPosition(1, draggingPos);
     }
@@ -49,11 +51,19 @@ public class BallControl : MonoBehaviour
     {
         lr.positionCount = 0;
 
-        Vector3 dragReleasePos = Camera.main.ScreenToWorldPoint(touch.position);
-        dragStartPos.z = 0f;
+        Vector2 dragReleasePos = Camera.main.ScreenToWorldPoint(touch.position);
+        //dragStartPos.z = 0f;
 
-        Vector3 force = dragStartPos - dragReleasePos;
-        Vector3 clampedForce = Vector3.ClampMagnitude(force, maxDrag) * power;
+        Vector2 force = dragStartPos - dragReleasePos;
+        Vector2 clampedForce = Vector2.ClampMagnitude(force, maxDrag) * power;
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
     }
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Hole")
+        {
+            Debug.Log("Victoire");
+        }
+    }*/
 }
