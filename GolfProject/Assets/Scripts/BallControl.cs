@@ -9,8 +9,6 @@ public class BallControl : MonoBehaviour
     public Rigidbody2D rb;
     public LineRenderer lr;
 
-
-
     Vector2 dragStartPos;
     Touch touch;
 
@@ -59,11 +57,11 @@ public class BallControl : MonoBehaviour
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Hole")
         {
             Debug.Log("Victoire");
         }
-    }*/
+    }
 }
