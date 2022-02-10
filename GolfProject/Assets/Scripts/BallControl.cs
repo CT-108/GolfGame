@@ -8,9 +8,23 @@ public class BallControl : MonoBehaviour
     public float maxDrag = 5f;
     public Rigidbody2D rb;
     public LineRenderer lr;
+    public bool isInHole;
+    public GameObject blocRoom;
 
     Vector2 dragStartPos;
     Touch touch;
+
+    public static BallControl Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        isInHole = false;
+    }
 
     private void Update()
     {
@@ -62,6 +76,14 @@ public class BallControl : MonoBehaviour
         if(collision.gameObject.tag == "Hole")
         {
             Debug.Log("Victoire");
+            blocRoom.SetActive(false);
+            isInHole = true;
+        }
+
+        if (collision.gameObject.tag == "newRoom")
+        {
+            blocRoom.SetActive(true);
+            isInHole = false;
         }
     }
 }
