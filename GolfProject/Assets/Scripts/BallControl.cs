@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BallControl : MonoBehaviour
 {
@@ -9,17 +8,22 @@ public class BallControl : MonoBehaviour
     public float maxDrag = 5f;
     public Rigidbody2D rb;
     public LineRenderer lr;
-    //private bool isInHole;
-    public List<GameObject> blocRoom;
-    private int numberHit;    
+    public bool isInHole;
+    public GameObject blocRoom;
 
     Vector2 dragStartPos;
     Touch touch;
 
+    public static BallControl Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
-        //isInHole = false;
-        numberHit = 0;
+        isInHole = false;
     }
 
     private void Update()
@@ -38,8 +42,6 @@ public class BallControl : MonoBehaviour
             if (touch.phase == TouchPhase.Ended)
             {
                 DragRealease();
-                numberHit++;
-                Debug.Log(numberHit);
             }
         }
     }
@@ -74,34 +76,14 @@ public class BallControl : MonoBehaviour
         if(collision.gameObject.tag == "Hole")
         {
             Debug.Log("Victoire");
-            blocRoom[0].SetActive(false);
-            //isInHole = true;
-        }
-        if(collision.gameObject.tag == "Hole2")
-        {
-            Debug.Log("Victoire");
-            blocRoom[1].SetActive(false);
-            //isInHole = true;
-        }
-        if(collision.gameObject.tag == "Hole3")
-        {
-            Debug.Log("Victoire");
-            SceneManager.LoadScene("Scene_Iris 1");
-            //isInHole = true;
+            blocRoom.SetActive(false);
+            isInHole = true;
         }
 
-        if (collision.gameObject.tag == "Room2")
+        if (collision.gameObject.tag == "newRoom")
         {
-            blocRoom[0].SetActive(true);
-            //isInHole = false;
-            numberHit = 0;
-        }
-        
-        if (collision.gameObject.tag == "Room3")
-        {
-            blocRoom[1].SetActive(true);
-            //isInHole = false;
-            numberHit = 0;
+            blocRoom.SetActive(true);
+            isInHole = false;
         }
     }
 }

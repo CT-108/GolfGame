@@ -6,10 +6,7 @@ TagManager:
   tags:
   - Hole
   - blocRoom
-  - Room2
-  - Room3
-  - Hole2
-  - Hole3
+  - newRoom
   layers:
   - Default
   - TransparentFX
