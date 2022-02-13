@@ -11,7 +11,6 @@ public class CameraManager : MonoBehaviour
 
         if (other.CompareTag("Player") && !other.isTrigger)
         {
-            //if (BallControl.Instance.isInHole)
             camera.SetActive(true);
         }
     }
