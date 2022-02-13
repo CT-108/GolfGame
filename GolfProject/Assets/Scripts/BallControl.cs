@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class BallControl : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class BallControl : MonoBehaviour
     public LineRenderer lr;
     public List<GameObject> blocRoom;
     private int numberHit;
-
+    private int recoltedCoins = 0;
+    [SerializeField]
+    private TMP_Text textCoins;
 
     Vector2 dragStartPos;
     Touch touch;
@@ -19,6 +22,7 @@ public class BallControl : MonoBehaviour
     private void Start()
     {
         numberHit = 0;
+        textCoins.text = "" + recoltedCoins;
     }
 
     private void Update()
@@ -40,7 +44,7 @@ public class BallControl : MonoBehaviour
                 numberHit++;
                 Debug.Log(numberHit);
             }
-        }
+        }        
     }
     private void DragStart()
     {
@@ -83,7 +87,7 @@ public class BallControl : MonoBehaviour
         if (collision.gameObject.tag == "Hole3")
         {
             Debug.Log("Victoire");
-            SceneManager.LoadScene("Scene_Iris 1");
+            StartCoroutine(WaitForNextScene());
         }
 
 
@@ -91,15 +95,27 @@ public class BallControl : MonoBehaviour
         if (collision.gameObject.tag == "Room2")
         {
             blocRoom[0].SetActive(true);
-            //isInHole = false;
             numberHit = 0;
         }
 
         if (collision.gameObject.tag == "Room3")
         {
             blocRoom[1].SetActive(true);
-            //isInHole = false;
             numberHit = 0;
         }
+
+
+        if (collision.gameObject.tag == "Coin")
+        {
+            recoltedCoins++;
+            textCoins.text = "" + recoltedCoins;
+            Destroy(collision.gameObject);
+        }
+    }
+
+    IEnumerator WaitForNextScene()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("Scene_Iris 1");
     }
 }

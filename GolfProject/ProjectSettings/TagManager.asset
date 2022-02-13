@@ -10,6 +10,7 @@ TagManager:
   - Room3
   - Hole2
   - Hole3
+  - Coin
   layers:
   - Default
   - TransparentFX
