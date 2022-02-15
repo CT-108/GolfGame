@@ -16,6 +16,9 @@ public class BallControl : MonoBehaviour
     [SerializeField]
     private TMP_Text textCoins;
 
+    //public PhysicsMaterial2D basic;
+    public PhysicsMaterial2D test;
+
     Vector2 dragStartPos;
     Touch touch;
 
@@ -23,6 +26,9 @@ public class BallControl : MonoBehaviour
     {
         numberHit = 0;
         textCoins.text = "" + recoltedCoins;
+
+        rb = GetComponent<Rigidbody2D>();
+        
     }
 
     private void Update()
@@ -74,6 +80,7 @@ public class BallControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Quand la balle atteint le trou et peut passer à la room suivante
         if (collision.gameObject.tag == "Hole")
         {
             Debug.Log("Victoire");
@@ -91,11 +98,12 @@ public class BallControl : MonoBehaviour
         }
 
 
-
+        //Quand la balle arrive dans la room d'après elle ne peut plus revenir en arrière
         if (collision.gameObject.tag == "Room2")
         {
             blocRoom[0].SetActive(true);
             numberHit = 0;
+            rb.sharedMaterial = test;
         }
 
         if (collision.gameObject.tag == "Room3")
@@ -105,12 +113,14 @@ public class BallControl : MonoBehaviour
         }
 
 
+        //Collectibles
         if (collision.gameObject.tag == "Coin")
         {
             recoltedCoins++;
             textCoins.text = "" + recoltedCoins;
             Destroy(collision.gameObject);
         }
+
     }
 
     IEnumerator WaitForNextScene()
