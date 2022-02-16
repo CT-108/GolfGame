@@ -1423,6 +1423,8 @@ MonoBehaviour:
   blocRoom:
   - {fileID: 2062657005}
   - {fileID: 1669013292}
+  textCoins: {fileID: 0}
+  test: {fileID: 0}
 --- !u!120 &779413028
 LineRenderer:
   m_ObjectHideFlags: 0
