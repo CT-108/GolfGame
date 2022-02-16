@@ -1638,18 +1638,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 779413022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be81934c91c784c4f9e2feed2540ce3c, type: 3}
+  m_Script: {fileID: 11500000, guid: a485c9d2e8d21ea469b8b5278ac606f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   power: 5
   maxDrag: 5
-  rb: {fileID: 779413023}
-  lr: {fileID: 779413028}
-  blocRoom:
-  - {fileID: 2062657005}
-  - {fileID: 1669013292}
+  RigidBody: {fileID: 779413023}
+  LineRenderer: {fileID: 779413028}
+  blocRoom: []
   textCoins: {fileID: 743049631}
-  test: {fileID: 6200000, guid: f498db3b6d5c77e4388a2e0db17aed7f, type: 2}
+  Ball: {fileID: 779413022}
+  test: {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
 --- !u!120 &779413028
 LineRenderer:
   m_ObjectHideFlags: 0
