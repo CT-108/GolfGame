@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class BallControl : MonoBehaviour
+public class IrisBallMobile : MonoBehaviour
 {
     public float power = 10f;
     public float maxDrag = 5f;
