@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using DG.Tweening;
 
 public class IrisBallPC : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject ball;
     public float power = 10f;
     public float maxDrag = 5f;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public LineRenderer lr;
+    private SpriteRenderer sr;
     public List<GameObject> blocRoom; // empêchent au joueur d'aller dans un autre niveau tant qu'il n'a pas gagné
     private int numberHit; // nbre de coups
     private int recoltedCoins = 0;
@@ -41,6 +45,7 @@ public class IrisBallPC : MonoBehaviour
         textCoins.text = "" + recoltedCoins;
 
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -68,7 +73,7 @@ public class IrisBallPC : MonoBehaviour
         }
 
         CamMouvement();
-        //HitLimit();
+        HitLimit();
     }
 
 
@@ -153,7 +158,11 @@ public class IrisBallPC : MonoBehaviour
                 // pour calculer la distance que la cam aura à faire à l'instant T
                 startTime = Time.time;
                 journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+
+                sr.DOFade(0, 1.5f); // on fait un fondu pour faire disparaître la balle
+                StartCoroutine(fadeIn()); // on lance une coroutine pour remettre l'alpha à 0                
             }
+            
             blocRoom[0].SetActive(false); // on désactive l'obstacle entre les 2 niveaux concernés
 
         }
@@ -171,6 +180,9 @@ public class IrisBallPC : MonoBehaviour
                 endMarker.position = new Vector3(44.42f, 0, -20);
                 startTime = Time.time;
                 journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+
+                sr.DOFade(0, 1.5f);
+                StartCoroutine(fadeIn());
             }
             blocRoom[1].SetActive(false);
 
@@ -239,5 +251,16 @@ public class IrisBallPC : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         isIn = false;
+    }
+
+    IEnumerator fadeIn()
+    {
+        yield return new WaitForSeconds(2.3f); //le temps que la cam soit arrivée au level suivant
+        if(inRoom1)
+            ball.transform.position = new Vector3(12.31f, -4.33f, 0);
+        if(inRoom2)
+            ball.transform.position = new Vector3(34.34f, -4.33f, 0);
+        Debug.Log("FADE");
+        sr.DOFade(1, 1.5f); // on reset l'alpha de la balle à 1
     }
 }
