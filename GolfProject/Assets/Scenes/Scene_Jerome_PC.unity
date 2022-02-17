@@ -3014,7 +3014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1febc07570a7e44a14ce7ea15d3f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 10
+  power: 5
   maxDrag: 5
   RigidBody: {fileID: 1514971709}
   LineRenderer: {fileID: 1514971708}
@@ -3022,6 +3022,7 @@ MonoBehaviour:
   textCoins: {fileID: 743049631}
   Ball: {fileID: 1514971705}
   test: {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
+  isAbleToShoot: 1
 --- !u!120 &1514971708
 LineRenderer:
   m_ObjectHideFlags: 0

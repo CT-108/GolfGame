@@ -38,7 +38,7 @@ public class Mobile_BallControl : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount > 0 && RigidBody.velocity.sqrMagnitude == 0)
+        if (Input.touchCount > 0 && RigidBody.velocity.magnitude == 0)
         {
             touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)

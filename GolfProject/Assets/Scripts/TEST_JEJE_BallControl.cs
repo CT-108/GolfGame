@@ -24,6 +24,8 @@ public class TEST_JEJE_BallControl : MonoBehaviour
 
     private bool isBeingHeld = false;
 
+    public bool isAbleToShoot = true;
+
     Vector2 dragStartPos;
 
     private void Start()
@@ -37,21 +39,32 @@ public class TEST_JEJE_BallControl : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && RigidBody.velocity.sqrMagnitude == 0)
-        {
-            isBeingHeld = true;
+        if (RigidBody.velocity.magnitude != 0)
+            isAbleToShoot = false;
+        else
+            isAbleToShoot = true;
 
-            if (Input.GetMouseButtonDown(0))
+        Debug.Log(isAbleToShoot);
+
+        if (Input.GetMouseButtonDown(0) && isAbleToShoot == true)
+        {
+            if (Input.GetMouseButton(0))
             {
-                DragStart();
-            }
-            if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
-            {
-                Dragging();
+                isBeingHeld = true;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    DragStart();
+                }
             }
         }
 
-        if (Input.GetMouseButtonUp(0) && isBeingHeld == true && RigidBody.velocity.sqrMagnitude == 0)
+        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+        {
+            Dragging();
+        }
+
+        if (Input.GetMouseButtonUp(0) && isBeingHeld == true)
         {
             DragRealease();
             numberHit++;
@@ -68,10 +81,13 @@ public class TEST_JEJE_BallControl : MonoBehaviour
     }
     private void Dragging()
     {
-        Vector2 draggingPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //dragStartPos.z = 0f;
-        LineRenderer.positionCount = 2;
-        LineRenderer.SetPosition(1, draggingPos);
+        if (isBeingHeld == true)
+        {
+            Vector2 draggingPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //dragStartPos.z = 0f;
+            LineRenderer.positionCount = 2;
+            LineRenderer.SetPosition(1, draggingPos);
+        }
     }
     private void DragRealease()
     {
