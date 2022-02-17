@@ -12,6 +12,7 @@ TagManager:
   - Hole3
   - Coin
   - Level1
+  - Room1
   layers:
   - Default
   - TransparentFX
