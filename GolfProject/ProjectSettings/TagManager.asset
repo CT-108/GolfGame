@@ -13,6 +13,8 @@ TagManager:
   - Coin
   - Level1
   - Room1
+  - BasicGround
+  - Sand
   layers:
   - Default
   - TransparentFX
