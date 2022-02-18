@@ -65,7 +65,7 @@ public class IrisBallPC : MonoBehaviour
 
         //(isAbleToShoot);
 
-        if (Input.GetMouseButtonDown(0) && isAbleToShoot == true && !camIsMoving)
+        if (Input.GetMouseButtonDown(0) && isAbleToShoot == true && !camIsMoving && !(numberHit >= limitHits[(_currentLimitHit)]))
         {
 
             isBeingHeld = true;
@@ -134,7 +134,6 @@ public class IrisBallPC : MonoBehaviour
         }
     }
 
-
     private void HitLimit() // limite des coups, pas encore setup le "perdu" etc, ça reset la room dans laquelle on est
     {
         if (inRoom2)
@@ -143,7 +142,7 @@ public class IrisBallPC : MonoBehaviour
             _currentLimitHit = 2;
 
         if (numberHit >= limitHits[(_currentLimitHit)])
-        {
+        {            
             StartCoroutine(Perdu());
         }
     }
@@ -177,8 +176,8 @@ public class IrisBallPC : MonoBehaviour
             if (holeTime == 1)
             {
                 //cam 
-                startMarker.position = new Vector3(22.21f, 0, -20);
-                endMarker.position = new Vector3(44.42f, 0, -20);
+                startMarker.position = new Vector3(23.53f, 0, -20);
+                endMarker.position = new Vector3(47.06f, 0, -20);
                 startTime = Time.time;
                 journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
 
@@ -259,9 +258,9 @@ public class IrisBallPC : MonoBehaviour
     {
         yield return new WaitForSeconds(2.3f); //le temps que la cam soit arrivée au level suivant
         if (inRoom1)
-            ball.transform.position = new Vector3(12.31f, -4.33f, 0);
+            ball.transform.position = new Vector3(13.54f, -2.13f, 0);
         if (inRoom2)
-            ball.transform.position = new Vector3(34.34f, -4.33f, 0);
+            ball.transform.position = new Vector3(37.36f, -3.84f, 0);
         sr.DOFade(1, 1.5f); // on reset l'alpha de la balle à 1
     }
 
