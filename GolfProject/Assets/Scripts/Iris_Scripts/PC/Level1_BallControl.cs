@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using DG.Tweening;
 
-public class IrisBallPC : MonoBehaviour
+public class Level1_BallControl : MonoBehaviour
 {
     [SerializeField]
     private GameObject ball;
@@ -45,12 +45,14 @@ public class IrisBallPC : MonoBehaviour
     private float startTime;
     private float journeyLength;
 
+    bool asWon = false;
+
     private void Start()
     {
         _currentLimitHit = 0;
         numberHit = 0;
         textCoins.text = "" + recoltedCoins;
-        textHits.text = "" + numberHit;
+        textHits.text = "" + numberHit + " / " + limitHits[(_currentLimitHit)];
 
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -84,15 +86,17 @@ public class IrisBallPC : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && isBeingHeld == true)
         {
             DragRealease();
-            numberHit++; // on compte un coup quand le joueur lâche la souris/doigt
-            //(numberHit);
-            isBeingHeld = false;
+            
         }
 
-        CamMouvement();
-        HitLimit();
-    }
+        if (isAbleToShoot && rb.velocity.magnitude == 0 && !asWon)
+            HitLimit();
 
+        CamMouvement();     
+        
+
+        textHits.text = "" + numberHit + " / " + limitHits[(_currentLimitHit)];
+    }
 
     private void DragStart()
     {
@@ -121,6 +125,10 @@ public class IrisBallPC : MonoBehaviour
         Vector2 force = dragStartPos - dragReleasePos;
         Vector2 clampedForce = Vector2.ClampMagnitude(force, maxDrag) * power;
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
+
+        numberHit++; // on compte un coup quand le joueur lâche la souris/doigt
+                     //(numberHit);
+        isBeingHeld = false;
     }
 
     private void CamMouvement()
@@ -142,15 +150,17 @@ public class IrisBallPC : MonoBehaviour
             _currentLimitHit = 2;
 
         if (numberHit >= limitHits[(_currentLimitHit)])
-        {            
+        {
             StartCoroutine(Perdu());
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Hole") // quand la balle arrive dans le trou 
         {
+            asWon = true;
             canMove = true; // elle est bien dedans
             StartCoroutine(CanMoveChrono()); // on démarre un chrono qui sert à la faire disparaître (pas encore setup)
             holeTime++; // la variable passe donc à 1
@@ -162,13 +172,12 @@ public class IrisBallPC : MonoBehaviour
 
                 sr.DOFade(0, 1.5f); // on fait un fondu pour faire disparaître la balle
                 StartCoroutine(FadeIn()); // on lance une coroutine pour remettre l'alpha à 0
-            }
-
-            
+            }        
 
         }
         if (collision.gameObject.tag == "Hole2")
         {
+            asWon = true;
             holeTime = 0;
             canMove = true;
             StartCoroutine(CanMoveChrono());
@@ -204,7 +213,9 @@ public class IrisBallPC : MonoBehaviour
             inRoom3 = false;
        
             numberHit = 0;
-    
+
+            asWon = false;
+
         }
 
         if (collision.gameObject.tag == "Room3")
@@ -215,6 +226,7 @@ public class IrisBallPC : MonoBehaviour
             inRoom3 = true;
            
             numberHit = 0;
+            asWon = false;
         }
 
 
@@ -266,7 +278,7 @@ public class IrisBallPC : MonoBehaviour
 
     IEnumerator Perdu()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Debug.Log("t'es nul");
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
