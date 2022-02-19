@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using DG.Tweening;
 
-public class Level1_BallControl : MonoBehaviour
+public class Level2_BallControl : MonoBehaviour
 {
     [SerializeField]
     private GameObject ball;
@@ -258,15 +258,7 @@ public class Level1_BallControl : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.tag == "Sand")
-        {
-            rb.sharedMaterial = groundEffect[1];
-            // à la base j'avais voulu faire une collision entre la balle et le sable directement mais il y avait quand même un rebond qui se faisait avec l'ancien material
-            // du coup j'ai créé un enfant à chaque bloc de sable qui a juste un collider plus épais que l'original comme ça la balle détecte ce collider là
-            // ce qui fait qu'elle a le temps de changer de material avant de toucher le vrai sol qui modifie son material
-        }
-
-        if (collision.gameObject.tag == "BasicGround")
+        if (collision.gameObject.tag == "Ice")
         {
             rb.sharedMaterial = groundEffect[0];
             // idem qu'au dessus
