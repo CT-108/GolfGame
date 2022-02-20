@@ -61,7 +61,7 @@ public class Level1_BallControl : MonoBehaviour
 
     private void Update()
     {
-        if (rb.velocity.magnitude != 0)
+        if (rb.velocity.x != 0)
             isAbleToShoot = false;
         else
             isAbleToShoot = true;
