@@ -61,7 +61,15 @@ public class Level1_BallControl : MonoBehaviour
 
     private void Update()
     {
-        if (rb.velocity.x != 0)
+        //Debug.Log(rb.velocity.magnitude);
+        //if (rb.velocity.magnitude < 0.6)
+
+        if (rb.velocity.y == 0)
+            rb.drag = 2;
+        else
+            rb.drag = 0;
+
+        if (rb.velocity.magnitude > 0.2)
             isAbleToShoot = false;
         else
             isAbleToShoot = true;
