@@ -15,6 +15,7 @@ TagManager:
   - BasicGround
   - Sand
   - Ice
+  - Water
   layers:
   - Default
   - TransparentFX

@@ -4866,7 +4866,7 @@ GameObject:
   - component: {fileID: 725795197}
   m_Layer: 0
   m_Name: BasicGround (9)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6800,7 +6800,7 @@ GameObject:
   - component: {fileID: 948340359}
   m_Layer: 0
   m_Name: BasicGround (12)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7331,7 +7331,7 @@ GameObject:
   - component: {fileID: 1043021589}
   m_Layer: 0
   m_Name: BasicGround (10)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8376,7 +8376,7 @@ GameObject:
   - component: {fileID: 1273296355}
   m_Layer: 0
   m_Name: BasicGround (11)
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
