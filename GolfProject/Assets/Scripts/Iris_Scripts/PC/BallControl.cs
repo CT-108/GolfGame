@@ -15,11 +15,12 @@ public class BallControl : MonoBehaviour
     public PhysicsMaterial2D[] groundEffect;
     Vector2 dragStartPos;
     public CamMovement camScript;
+    public SceneTransition sceneScript;
     
     private int room = 0;
     private int _currentLimitHit;
     private int numberHit;
-    private int recoltedCoins = 0;
+    
     private int recoltedCoinsPerLevel = 0;
     private int holeTime = 0;
     public int[] minHitGold;
@@ -46,7 +47,6 @@ public class BallControl : MonoBehaviour
     private bool asWon = false;
 
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -58,7 +58,7 @@ public class BallControl : MonoBehaviour
         ball.transform.position = startPoints[0].transform.position;
         _currentLimitHit = 0;
         numberHit = 0;
-        textCoins.text = "" + recoltedCoins;
+        textCoins.text = "" + KeepingVariables.Instance.recoltedCoins;
         textHits.text = "" + numberHit + " / " + limitHits[(_currentLimitHit)];        
     }
 
@@ -143,9 +143,9 @@ public class BallControl : MonoBehaviour
         if (numberHit >= limitHits[(_currentLimitHit)])
         {
             StartCoroutine(Perdu());
-        }
-        
+        }        
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -206,7 +206,7 @@ public class BallControl : MonoBehaviour
             holeTime = 0;
             holeTime++;
             if (holeTime == 1)
-                SceneManager.LoadScene("Ice_World");
+                sceneScript.LevelEnding();
 
             if ((numberHit <= minHitGold[2]) && (recoltedCoinsPerLevel > minRecoltedCoinGold[2]))
                 Debug.Log("Médaille or");
@@ -238,9 +238,9 @@ public class BallControl : MonoBehaviour
 
         if (collision.gameObject.tag == "Coin")
         {
-            recoltedCoins++;
+            KeepingVariables.Instance.recoltedCoins++;
             recoltedCoinsPerLevel++;
-            textCoins.text = "" + recoltedCoins;
+            textCoins.text = "" + KeepingVariables.Instance.recoltedCoins;
             Destroy(collision.gameObject);
         }
 
