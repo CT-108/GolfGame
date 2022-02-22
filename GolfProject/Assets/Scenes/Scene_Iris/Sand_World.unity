@@ -3819,7 +3819,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &779413024
 CircleCollider2D:
@@ -4022,7 +4022,6 @@ MonoBehaviour:
   ball: {fileID: 779413022}
   waitForLoose: 1
   waitForFade: 2.3
-  ballUpdatePosition: []
   linearDragOnGround: 2
   linearDragOnAir: 0
   minValueToBeAbleToShoot: 0.2
@@ -6882,7 +6881,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.1390476, y: -2.9949312}
+  m_Offset: {x: 4.398323, y: -2.9949312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6893,7 +6892,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18.871288, y: 9.485636}
+  m_Size: {x: 21.38984, y: 9.485636}
   m_EdgeRadius: 0
 --- !u!1 &1657042769
 GameObject:

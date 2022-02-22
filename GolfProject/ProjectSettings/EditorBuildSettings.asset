@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_Iris/Sand_World.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Scene_Iris 1.unity
-    guid: 2994e470f1a329d488f7561a257b3522
+    path: Assets/Scenes/Scene_Iris/Ice_World.unity
+    guid: 7bb68baf84ed562448ccc1dcef1c7d86
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

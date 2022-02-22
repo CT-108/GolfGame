@@ -7,34 +7,34 @@ using DG.Tweening;
 
 public class BallControl : MonoBehaviour
 {
-    static BallControl Instance;
-
-    public GameObject ball;
-    [SerializeField] private float waitForLoose;
-    [SerializeField] private float waitForFade;
-    [SerializeField] private float linearDragOnGround;
-    [SerializeField] private float linearDragOnAir;
-    [SerializeField] private float minValueToBeAbleToShoot;
-    [SerializeField] private float durationFadeInBall;
-
-    [SerializeField] private int minHitGold;
-    [SerializeField] private int minRecoltedCoinGold;
-    [SerializeField] private int minHitSilver;
-    [SerializeField] private int maxHitSilver;
-    [SerializeField] private int minHitBronze;
-
-
     private Rigidbody2D rb;
     public LineRenderer lr;
     private SpriteRenderer sr;
+    public GameObject ball;
+    public GameObject[] startPoints;
+    public PhysicsMaterial2D[] groundEffect;
+    Vector2 dragStartPos;
+    public CamMovement camScript;
     
-    public int[] limitHits;
+    private int room = 0;
     private int _currentLimitHit;
     private int numberHit;
     private int recoltedCoins = 0;
     private int recoltedCoinsPerLevel = 0;
     private int holeTime = 0;
+    public int[] minHitGold;
+    public int[] minRecoltedCoinGold;
+    public int[] minHitSilver;
+    public int[] maxHitSilver;
+    public int[] minHitBronze;
+    public int[] limitHits;
 
+    public float waitForLoose;
+    public float waitForFade;
+    public float linearDragOnGround;
+    public float linearDragOnAir;
+    public float minValueToBeAbleToShoot;
+    public float durationFadeInBall;
     public float power = 10f;
     public float maxDrag = 5f;
 
@@ -43,26 +43,12 @@ public class BallControl : MonoBehaviour
 
     private bool isBeingHeld = false;
     private bool isAbleToShoot = true;
-
     private bool asWon = false;
 
-    public bool[] room;
-    public GameObject[] startPoints;
 
-    public List<PhysicsMaterial2D> groundEffect;
-
-    public CamMovement camScript;
-
-    Vector2 dragStartPos;
-
-    private CamMovement camMovement;
-
-    Vector3 startPosition;
 
     private void Awake()
     {
-        Instance = this;
-
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
     }
@@ -149,9 +135,9 @@ public class BallControl : MonoBehaviour
 
     private void HitLimit()
     {
-        if (room[1])
+        if (room == 1)
             _currentLimitHit = 1;
-        if (room[2])
+        if (room == 2)
             _currentLimitHit = 2;
 
         if (numberHit >= limitHits[(_currentLimitHit)])
@@ -177,13 +163,13 @@ public class BallControl : MonoBehaviour
                 StartCoroutine(FadeIn());
             }
 
-            if ((numberHit <= minHitGold) && (recoltedCoinsPerLevel > minRecoltedCoinGold))
+            if ((numberHit <= minHitGold[0]) && (recoltedCoinsPerLevel > minRecoltedCoinGold[0]))
                 Debug.Log("Médaille or");
             else
                 Debug.Log("Médaille argent");
-            if (numberHit >= minHitSilver && numberHit <= maxHitSilver)
+            if (numberHit >= minHitSilver[0] && numberHit <= maxHitSilver[0])
                 Debug.Log("Médaille argent");
-            if (numberHit >= minHitBronze && numberHit < limitHits[(_currentLimitHit)])
+            if (numberHit >= minHitBronze[0] && numberHit < limitHits[(_currentLimitHit)])
                 Debug.Log("Médaille bronze");
         }
 
@@ -204,13 +190,13 @@ public class BallControl : MonoBehaviour
                 StartCoroutine(FadeIn());
             }
 
-            if ((numberHit <= 3) && (recoltedCoinsPerLevel > 2))
+            if ((numberHit <= minHitGold[1]) && (recoltedCoinsPerLevel > minRecoltedCoinGold[1]))
                 Debug.Log("Médaille or");
             else
                 Debug.Log("Médaille argent");
-            if (numberHit >= 4 && numberHit <= 6)
+            if (numberHit >= minHitSilver[1] && numberHit <= maxHitSilver[1])
                 Debug.Log("Médaille argent");
-            if (numberHit >= 7 && numberHit < limitHits[(_currentLimitHit)])
+            if (numberHit >= minHitBronze[1] && numberHit < limitHits[(_currentLimitHit)])
                 Debug.Log("Médaille bronze");
 
         }
@@ -221,13 +207,20 @@ public class BallControl : MonoBehaviour
             holeTime++;
             if (holeTime == 1)
                 SceneManager.LoadScene("Ice_World");
+
+            if ((numberHit <= minHitGold[2]) && (recoltedCoinsPerLevel > minRecoltedCoinGold[2]))
+                Debug.Log("Médaille or");
+            else
+                Debug.Log("Médaille argent");
+            if (numberHit >= minHitSilver[2] && numberHit <= maxHitSilver[2])
+                Debug.Log("Médaille argent");
+            if (numberHit >= minHitBronze[2] && numberHit < limitHits[(_currentLimitHit)])
+                Debug.Log("Médaille bronze");
         }
 
         if (collision.gameObject.tag == "Room2")
         {
-            room[1] = true;
-            room[0] = false;
-            room[2] = false;
+            room = 1;
        
             numberHit = 0;
             asWon = false;
@@ -236,9 +229,7 @@ public class BallControl : MonoBehaviour
 
         if (collision.gameObject.tag == "Room3")
         {
-            room[2] = true;
-            room[1] = false;
-            room[0] = false;
+            room = 2;
            
             numberHit = 0;
             asWon = false;
@@ -268,10 +259,10 @@ public class BallControl : MonoBehaviour
     {
         yield return new WaitForSeconds(waitForFade); //le temps que la cam soit arrivée au level suivant
         Debug.Log("ok");
-        if (room[0])
+        if (room == 0)
             ball.transform.position = startPoints[1].transform.position;
 
-        if (room[1])
+        if (room == 1)
             ball.transform.position = startPoints[2].transform.position;
         sr.DOFade(1, 1.5f); // on reset l'alpha de la balle à 1
     }

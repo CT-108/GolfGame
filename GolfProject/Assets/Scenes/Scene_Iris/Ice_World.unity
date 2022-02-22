@@ -1075,7 +1075,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1704,7 +1704,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1923,7 +1923,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2250,7 +2250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.06, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1831318315}
@@ -3584,8 +3584,8 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!58 &779413024
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3679,25 +3679,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7612b3dfdf0ca641ad9e6d0fc6188b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 779413022}
-  waitForLoose: 1
-  waitForFade: 2.3
-  linearDragOnGround: 1
-  linearDragOnAir: 0
-  minValueToBeAbleToShoot: 0.2
-  durationFadeInBall: 1.5
-  minHitGold: 0
-  minRecoltedCoinGold: 0
-  minHitSilver: 0
-  maxHitSilver: 0
-  minHitBronze: 0
   lr: {fileID: 779413028}
-  limitHits: 0a0000000a0000000a000000
-  power: 10
-  maxDrag: 8
-  textCoins: {fileID: 743049631}
-  textHits: {fileID: 364557855}
-  room: 010000
+  ball: {fileID: 779413022}
   startPoints:
   - {fileID: 1869245397}
   - {fileID: 1869245396}
@@ -3707,6 +3690,22 @@ MonoBehaviour:
   - {fileID: 6200000, guid: f498db3b6d5c77e4388a2e0db17aed7f, type: 2}
   - {fileID: 6200000, guid: e2bb0a4f88289ea4f8f177d254b93a8b, type: 2}
   camScript: {fileID: 972311958}
+  minHitGold: 000000000000000000000000
+  minRecoltedCoinGold: 
+  minHitSilver: 
+  maxHitSilver: 
+  minHitBronze: 
+  limitHits: 0a0000000a0000000a000000
+  waitForLoose: 1
+  waitForFade: 2.3
+  linearDragOnGround: 1
+  linearDragOnAir: 0
+  minValueToBeAbleToShoot: 0.2
+  durationFadeInBall: 1.5
+  power: 10
+  maxDrag: 8
+  textCoins: {fileID: 743049631}
+  textHits: {fileID: 364557855}
 --- !u!120 &779413028
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4855,7 +4854,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -5577,7 +5576,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -6770,7 +6769,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -7053,11 +7052,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945009787936731591, guid: e4620a7713c5faa4dbc2a237fdbc5bde, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.16
+      value: 50.86
       objectReference: {fileID: 0}
     - target: {fileID: 2945009787936731591, guid: e4620a7713c5faa4dbc2a237fdbc5bde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.6
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 2945009787936731591, guid: e4620a7713c5faa4dbc2a237fdbc5bde, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7623,11 +7622,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945009787936731591, guid: e4620a7713c5faa4dbc2a237fdbc5bde, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.62
+      value: 56.79
       objectReference: {fileID: 0}
     - target: {fileID: 2945009787936731591, guid: e4620a7713c5faa4dbc2a237fdbc5bde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.48
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 2945009787936731591, guid: e4620a7713c5faa4dbc2a237fdbc5bde, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8050,9 +8049,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6137573908603355444, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573908603355445, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.53
+      objectReference: {fileID: 0}
     - target: {fileID: 6137573908603355445, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.72
+      value: -3.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573908796720252, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573908796720252, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573908796720255, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
       propertyPath: m_RootOrder
@@ -8101,6 +8120,14 @@ PrefabInstance:
     - target: {fileID: 6137573909148747997, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
       propertyPath: m_Name
       value: StartPointsBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909537330290, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909537330317, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
@@ -8912,7 +8939,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
