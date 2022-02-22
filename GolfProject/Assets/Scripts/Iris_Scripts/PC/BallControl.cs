@@ -260,7 +260,8 @@ public class BallControl : MonoBehaviour
             rb.sharedMaterial = groundEffect[1];
 
         if (collision.gameObject.tag == "Ice")
-            rb.sharedMaterial = groundEffect[3];
+            rb.sharedMaterial = groundEffect[2];
+        
     }    
 
     IEnumerator FadeIn()
