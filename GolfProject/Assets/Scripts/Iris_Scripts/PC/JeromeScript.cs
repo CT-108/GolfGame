@@ -280,13 +280,17 @@ public class JeromeScript : MonoBehaviour
         {
             if (item.NameTag == collision.gameObject.tag)
             {
-                rb.sharedMaterial = item.PhysicsMaterial;
 
                 if (item.IsInPit && PitContact == 0)
                 {
+                    rb.velocity = Vector3.zero;
+                    rb.inertia = 0;
                     StartCoroutine(BallInPit());
                     PitContact++;
                 }
+
+                if (item.IsInPit == false)
+                    rb.sharedMaterial = item.PhysicsMaterial;
             }
         }
         
@@ -300,6 +304,7 @@ public class JeromeScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         ball.transform.position = newPosition;
         sr.DOFade(1, 1);
+        rb.inertia = 0.025f;
         yield return new WaitForSeconds(1);
         isAbleToShoot = true;
         PitContact--;
