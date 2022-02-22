@@ -10,6 +10,7 @@ public class BallControl : MonoBehaviour
 {
     private Rigidbody2D rb;
     public LineRenderer lr;
+    public GameObject trail;
     private SpriteRenderer sr;
     public GameObject ball;
     public GameObject[] startPoints;
@@ -43,6 +44,7 @@ public class BallControl : MonoBehaviour
     public float durationFadeInBall;
     public float power = 10f;
     public float maxDrag = 5f;
+    public float windForce;
 
     public TMP_Text textCoins;
     public TMP_Text textHits;
@@ -170,7 +172,7 @@ public class BallControl : MonoBehaviour
             if (holeTime == 1) 
             {
                 camScript.StartMovingCamera();
-
+                trail.SetActive(false);
                 sr.DOFade(0, durationFadeInBall);
                 StartCoroutine(FadeIn());
             }
@@ -197,7 +199,7 @@ public class BallControl : MonoBehaviour
                 camScript.startMarker.position = new Vector3(23.53f, 0, -20);
                 camScript.endMarker.position = new Vector3(47.06f, 0, -20);
                 camScript.StartMovingCamera();
-
+                trail.SetActive(false);
                 sr.DOFade(0, durationFadeInBall);
                 StartCoroutine(FadeIn());
             }
@@ -260,8 +262,7 @@ public class BallControl : MonoBehaviour
         {
             if (item.NameTag == collision.gameObject.tag)
             {
-
-                if (item.IsInPit && pitContact == 0)
+                if (item.isInPit && pitContact == 0)
                 {
                     rb.velocity = Vector3.zero;
                     rb.inertia = 0;
@@ -269,7 +270,7 @@ public class BallControl : MonoBehaviour
                     pitContact++;
                 }
 
-                if (item.IsInPit == false)
+                if (item.isInPit == false)
                     rb.sharedMaterial = item.PhysicsMaterial;
             }
         }
@@ -291,13 +292,14 @@ public class BallControl : MonoBehaviour
     IEnumerator FadeIn()
     {
         yield return new WaitForSeconds(waitForFade); //le temps que la cam soit arrivée au level suivant
-        Debug.Log("ok");
+        
         if (room == 0)
             ball.transform.position = startPoints[1].transform.position;
 
         if (room == 1)
             ball.transform.position = startPoints[2].transform.position;
         sr.DOFade(1, 1.5f); // on reset l'alpha de la balle à 1
+        trail.SetActive(true);
     }
 
     IEnumerator Perdu()
@@ -313,6 +315,6 @@ public class BallControl : MonoBehaviour
     {
         public string NameTag;
         public PhysicsMaterial2D PhysicsMaterial;
-        public bool IsInPit = false;
+        public bool isInPit = false;
     }
 }
