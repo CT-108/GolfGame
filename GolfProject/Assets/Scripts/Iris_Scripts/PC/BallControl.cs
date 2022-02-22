@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using DG.Tweening;
+using System;
 
 public class BallControl : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class BallControl : MonoBehaviour
     Vector2 dragStartPos;
     public CamMovement camScript;
     public SceneTransition sceneScript;
-    
+
+    //public List<MaterialType> MaterialTypes;
+
     private int room = 0;
     private int _currentLimitHit;
     private int numberHit;
@@ -252,7 +255,21 @@ public class BallControl : MonoBehaviour
 
         if (collision.gameObject.tag == "Ice")
             rb.sharedMaterial = groundEffect[2];
-        
+
+        //foreach (var item in MaterialTypes)
+        //{
+        //    if (item.NameTag == collision.gameObject.tag)
+        //    {
+        //        rb.sharedMaterial = item.PhysicsMaterial;
+
+        //        if (item.IsInPit && PitContact == 0)
+        //        {
+        //            StartCoroutine(BallInPit());
+        //            PitContact++;
+        //        }
+        //    }
+        //}
+
     }    
 
     IEnumerator FadeIn()
