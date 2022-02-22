@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 55478360}
   m_Layer: 0
   m_Name: BasicGround (1)
-  m_TagString: BasicGround
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2983,7 +2983,7 @@ GameObject:
   - component: {fileID: 489466350}
   m_Layer: 0
   m_Name: BasicGround (1)
-  m_TagString: BasicGround
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4331,7 +4331,7 @@ GameObject:
   - component: {fileID: 681239055}
   m_Layer: 0
   m_Name: BasicGround (1)
-  m_TagString: BasicGround
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4724,6 +4724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 714928214}
   - component: {fileID: 714928215}
+  - component: {fileID: 714928216}
   m_Layer: 0
   m_Name: lac_3
   m_TagString: Untagged
@@ -4796,6 +4797,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &714928216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714928213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4bccadb8e834bd429d54e4755b6ef0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  startMarker: {fileID: 0}
+  endMarker: {fileID: 0}
+  speed: 0
+  journeyLength: 0
+  camIsMoving: 0
+  camCanMove: 0
 --- !u!1 &724247700
 GameObject:
   m_ObjectHideFlags: 0
@@ -5554,7 +5574,7 @@ GameObject:
   - component: {fileID: 765893105}
   m_Layer: 0
   m_Name: BasicGround (1)
-  m_TagString: BasicGround
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5633,14 +5653,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDrag: 0.5
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &779413024
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5731,23 +5751,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 779413022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b760a9780d09eb499a614559947280d, type: 3}
+  m_Script: {fileID: 11500000, guid: d7612b3dfdf0ca641ad9e6d0fc6188b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 779413022}
-  power: 8
-  maxDrag: 8
+  waitForLoose: 1
+  waitForFade: 2.3
+  linearDragOnGround: 2
+  linearDragOnAir: 0
+  minValueToBeAbleToShoot: 0.2
+  durationFadeInBall: 1.5
+  minHitGold: 0
+  minRecoltedCoinGold: 0
+  minHitSilver: 0
+  maxHitSilver: 0
+  minHitBronze: 0
   lr: {fileID: 779413028}
-  limitHits: 0a000000030000000b000000
+  limitHits: 0a0000000a0000000a000000
+  power: 10
+  maxDrag: 8
   textCoins: {fileID: 743049631}
   textHits: {fileID: 364557855}
+  room: 010000
+  startPoints:
+  - {fileID: 1181451984}
+  - {fileID: 1181451983}
+  - {fileID: 1181451982}
   groundEffect:
   - {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
   - {fileID: 6200000, guid: f498db3b6d5c77e4388a2e0db17aed7f, type: 2}
-  cam: {fileID: 519420028}
-  startMarker: {fileID: 537635921}
-  endMarker: {fileID: 1793391724}
-  speed: 10
+  - {fileID: 6200000, guid: e2bb0a4f88289ea4f8f177d254b93a8b, type: 2}
+  camScript: {fileID: 1571858199}
 --- !u!120 &779413028
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -6342,7 +6376,7 @@ GameObject:
   - component: {fileID: 864208083}
   m_Layer: 0
   m_Name: BasicGround (1)
-  m_TagString: BasicGround
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7876,6 +7910,102 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.20478609}
   m_EdgeRadius: 0
+--- !u!1001 &1181451981
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6137573908603355445, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573908603355445, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573908796720252, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573908796720252, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.428171
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9608916
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.6797915
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747970, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909148747997, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_Name
+      value: StartPointsBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909537330290, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137573909537330290, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.78
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+--- !u!1 &1181451982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6137573908796720254, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+  m_PrefabInstance: {fileID: 1181451981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1181451983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6137573909537330316, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+  m_PrefabInstance: {fileID: 1181451981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1181451984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6137573908603355447, guid: 42e6c226e2688cb4bbc0b95dbfe92939, type: 3}
+  m_PrefabInstance: {fileID: 1181451981}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1194180259
 GameObject:
   m_ObjectHideFlags: 0
@@ -8485,7 +8615,7 @@ GameObject:
   - component: {fileID: 1281467108}
   m_Layer: 0
   m_Name: BasicGround (1)
-  m_TagString: BasicGround
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9809,6 +9939,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1571858198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1571858200}
+  - component: {fileID: 1571858199}
+  m_Layer: 0
+  m_Name: _Script
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1571858199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571858198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4bccadb8e834bd429d54e4755b6ef0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 519420028}
+  startMarker: {fileID: 537635921}
+  endMarker: {fileID: 1793391724}
+  speed: 10
+  journeyLength: 0
+  camIsMoving: 0
+  camCanMove: 0
+--- !u!4 &1571858200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571858198}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.836052, y: 1.1181109, z: -11.438323}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594746821
 GameObject:
   m_ObjectHideFlags: 0
@@ -9896,7 +10076,7 @@ GameObject:
   - component: {fileID: 1597900085}
   m_Layer: 0
   m_Name: BasicGround (1)
-  m_TagString: BasicGround
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,7 +12,6 @@ public class BallControl : MonoBehaviour
     public GameObject ball;
     [SerializeField] private float waitForLoose;
     [SerializeField] private float waitForFade;
-    [SerializeField] private float[] ballUpdatePosition;
     [SerializeField] private float linearDragOnGround;
     [SerializeField] private float linearDragOnAir;
     [SerializeField] private float minValueToBeAbleToShoot;
