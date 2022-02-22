@@ -17,8 +17,9 @@ public class BallControl : MonoBehaviour
     Vector2 dragStartPos;
     public CamMovement camScript;
     public SceneTransition sceneScript;
+    Vector3 newPosition;
 
-    //public List<MaterialType> MaterialTypes;
+    public List<MaterialType> MaterialTypes;
 
     private int room = 0;
     private int _currentLimitHit;
@@ -26,6 +27,7 @@ public class BallControl : MonoBehaviour
     
     private int recoltedCoinsPerLevel = 0;
     private int holeTime = 0;
+    public int pitContact = 0;
     public int[] minHitGold;
     public int[] minRecoltedCoinGold;
     public int[] minHitSilver;
@@ -67,15 +69,21 @@ public class BallControl : MonoBehaviour
 
     private void Update()
     {
-        if (rb.velocity.y == 0)
+        if (rb.velocity.y > -2 && rb.velocity.y < 0.3)
             rb.drag = linearDragOnGround;
         else
             rb.drag = linearDragOnAir;
 
-        if (rb.velocity.magnitude > minValueToBeAbleToShoot)
-            isAbleToShoot = false;
-        else
+        if (pitContact > 1)
+            pitContact = 1;
+
+        if (rb.velocity.magnitude < minValueToBeAbleToShoot && pitContact == 0)
+        {
             isAbleToShoot = true;
+            newPosition = ball.transform.position;
+        }
+        else
+            isAbleToShoot = false;
 
         if (Input.GetMouseButtonDown(0) && isAbleToShoot == true && !camScript.camIsMoving && !(numberHit >= limitHits[(_currentLimitHit)]))
         {
@@ -145,6 +153,7 @@ public class BallControl : MonoBehaviour
 
         if (numberHit >= limitHits[(_currentLimitHit)])
         {
+            pitContact++;
             StartCoroutine(Perdu());
         }        
     }
@@ -247,30 +256,37 @@ public class BallControl : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.tag == "BasicGround")
-            rb.sharedMaterial = groundEffect[0];
+        foreach (var item in MaterialTypes)
+        {
+            if (item.NameTag == collision.gameObject.tag)
+            {
 
-        if (collision.gameObject.tag == "Sand")
-            rb.sharedMaterial = groundEffect[1];
+                if (item.IsInPit && pitContact == 0)
+                {
+                    rb.velocity = Vector3.zero;
+                    rb.inertia = 0;
+                    StartCoroutine(BallInPit());
+                    pitContact++;
+                }
 
-        if (collision.gameObject.tag == "Ice")
-            rb.sharedMaterial = groundEffect[2];
+                if (item.IsInPit == false)
+                    rb.sharedMaterial = item.PhysicsMaterial;
+            }
+        }
+    }
 
-        //foreach (var item in MaterialTypes)
-        //{
-        //    if (item.NameTag == collision.gameObject.tag)
-        //    {
-        //        rb.sharedMaterial = item.PhysicsMaterial;
-
-        //        if (item.IsInPit && PitContact == 0)
-        //        {
-        //            StartCoroutine(BallInPit());
-        //            PitContact++;
-        //        }
-        //    }
-        //}
-
-    }    
+    IEnumerator BallInPit()
+    {
+        isAbleToShoot = false;
+        sr.DOFade(0, 1);
+        yield return new WaitForSeconds(1);
+        ball.transform.position = newPosition;
+        sr.DOFade(1, 1);
+        rb.inertia = 0.025f;
+        yield return new WaitForSeconds(1);
+        isAbleToShoot = true;
+        pitContact--;
+    }
 
     IEnumerator FadeIn()
     {
@@ -290,5 +306,13 @@ public class BallControl : MonoBehaviour
         Debug.Log("t'es nul");
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+    }
+
+    [Serializable]
+    public class MaterialType
+    {
+        public string NameTag;
+        public PhysicsMaterial2D PhysicsMaterial;
+        public bool IsInPit = false;
     }
 }
