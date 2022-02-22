@@ -283,10 +283,12 @@ public class JeromeScript : MonoBehaviour
 
                 if (item.IsInPit && PitContact == 0)
                 {
-                    rb.velocity = Vector3.zero;
-                    rb.inertia = 0;
                     StartCoroutine(BallInPit());
                     PitContact++;
+                    rb.velocity = Vector3.zero;
+                    rb.inertia = 0;
+                
+                    Debug.Log(item);
                 }
 
                 if (item.IsInPit == false)
@@ -306,8 +308,8 @@ public class JeromeScript : MonoBehaviour
         sr.DOFade(1, 1);
         rb.inertia = 0.025f;
         yield return new WaitForSeconds(1);
-        isAbleToShoot = true;
         PitContact--;
+        isAbleToShoot = true;
     }
     IEnumerator FadeIn()
     {
