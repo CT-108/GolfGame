@@ -5409,6 +5409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Transitions
       objectReference: {fileID: 0}
+    - target: {fileID: 4352640304140211429, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4352640305309164980, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
