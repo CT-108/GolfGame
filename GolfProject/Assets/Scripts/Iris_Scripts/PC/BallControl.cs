@@ -14,7 +14,6 @@ public class BallControl : MonoBehaviour
     private SpriteRenderer sr;
     public GameObject ball;
     public GameObject[] startPoints;
-    public PhysicsMaterial2D[] groundEffect;
     Vector2 dragStartPos;
     public CamMovement camScript;
     public SceneTransition sceneScript;
