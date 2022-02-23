@@ -962,6 +962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fade: {fileID: 1313200486}
+  FadeObj: {fileID: 1418585424}
 --- !u!1 &191915378
 GameObject:
   m_ObjectHideFlags: 0
@@ -6320,7 +6321,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4352640305309164981, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
   m_PrefabInstance: {fileID: 281286505}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1418585424}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -6815,6 +6816,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.20478609}
   m_EdgeRadius: 0
+--- !u!1 &1418585424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4352640305309164979, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+  m_PrefabInstance: {fileID: 281286505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1419350386
 GameObject:
   m_ObjectHideFlags: 0

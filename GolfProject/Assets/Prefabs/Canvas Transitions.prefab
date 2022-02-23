@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 42.79529, y: 22.963778}
+  m_AnchoredPosition: {x: 42.79529, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &409258505342978160
@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 4352640304140211431}
   - component: {fileID: 4352640304140211430}
   - component: {fileID: 3813555495862911780}
-  - component: {fileID: 5277493406182258892}
   m_Layer: 5
   m_Name: Canvas Transitions
   m_TagString: Untagged
@@ -238,20 +237,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
 --- !u!114 &3813555495862911780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4352640304140211429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fae5e6d641756c94b8aa2111f02f9fe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 5849646016835660182}
-  buttonPause: {fileID: 0}
---- !u!114 &5277493406182258892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -519,7 +504,7 @@ PrefabInstance:
     - target: {fileID: 4739665751481418041, guid: 44ea7e17e3293ad4a88cb8efd02e84a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5277493406182258892}
+      objectReference: {fileID: 3813555495862911780}
     - target: {fileID: 4739665751481418041, guid: 44ea7e17e3293ad4a88cb8efd02e84a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Pause
