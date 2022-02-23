@@ -283,12 +283,12 @@ public class JeromeScript : MonoBehaviour
 
                 if (item.IsInPit && PitContact == 0)
                 {
-                    StartCoroutine(BallInPit());
                     PitContact++;
                     rb.velocity = Vector3.zero;
                     rb.inertia = 0;
+                    StartCoroutine(BallInPit());
                 
-                    Debug.Log(item);
+                    //Debug.Log(item);
                 }
 
                 if (item.IsInPit == false)
