@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
-
+    public  bool GameIsPaused = false;
+    public BallControl ballScript;
     public GameObject pauseMenuUI;
     public GameObject buttonPause;
-
-    //private void Start()
-    //{
-    //    buttonPause.SetActive(false);
-    //}
 
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        ballScript.isBeingHeld = false;
     }
 
     public void Pause()
@@ -26,5 +22,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        ballScript.isBeingHeld = false;
     }
 }
