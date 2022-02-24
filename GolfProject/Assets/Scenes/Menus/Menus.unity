@@ -845,9 +845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fader: {fileID: 294671932}
   FadeInTime: 1
-  FadeOutTime: 0
-  FadeInAlpha: 0
-  FadeOutAlpha: 0
+  FadeOutTime: 1
 --- !u!4 &1041995707
 Transform:
   m_ObjectHideFlags: 0

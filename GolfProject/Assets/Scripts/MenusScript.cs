@@ -13,15 +13,11 @@ public class MenusScript : MonoBehaviour
 
     public int FadeOutTime;
 
-    public int FadeInAlpha; //Value used when it goes from Black to Transparent
-
-    public int FadeOutAlpha; //Value used when it goes from Transparent to Black
-
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(FadeIn());
+        StartCoroutine(FadeOut());
     }
 
     // Update is called once per frame
@@ -47,13 +43,13 @@ public class MenusScript : MonoBehaviour
 
     IEnumerator FadeIn()
     {
-        Fader.DOFade(FadeInAlpha, FadeInTime);
+        Fader.DOFade(1, FadeInTime);
         yield return new WaitForSeconds(FadeInTime);
     }
 
     IEnumerator FadeOut()
     {
-        Fader.DOFade(FadeOutAlpha, FadeOutTime);
+        Fader.DOFade(0, FadeOutTime);
         yield return new WaitForSeconds(FadeOutTime);
     }
 }
