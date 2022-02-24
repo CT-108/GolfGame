@@ -1665,6 +1665,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3813555495862911780, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+      propertyPath: ballScript
+      value: 
+      objectReference: {fileID: 779413029}
     - target: {fileID: 4352640304140211416, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
       propertyPath: m_Camera
       value: 
@@ -3330,7 +3334,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: dfc73dc0570497f4c80b3c85df8c0f54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5855,6 +5859,10 @@ PrefabInstance:
     - target: {fileID: 6840269072929329973, guid: 7de5a0c94b3fcc543aa3021d0ba0418b, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840269072929329973, guid: 7de5a0c94b3fcc543aa3021d0ba0418b, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6840269072929329975, guid: 7de5a0c94b3fcc543aa3021d0ba0418b, type: 3}
       propertyPath: m_Name
