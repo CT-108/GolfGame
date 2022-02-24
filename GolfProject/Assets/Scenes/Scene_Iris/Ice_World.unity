@@ -3402,10 +3402,6 @@ MonoBehaviour:
   - {fileID: 1869245397}
   - {fileID: 1869245396}
   - {fileID: 1869245395}
-  groundEffect:
-  - {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
-  - {fileID: 6200000, guid: f498db3b6d5c77e4388a2e0db17aed7f, type: 2}
-  - {fileID: 6200000, guid: e2bb0a4f88289ea4f8f177d254b93a8b, type: 2}
   camScript: {fileID: 972311958}
   sceneScript: {fileID: 972311960}
   MaterialTypes: []
@@ -3427,6 +3423,7 @@ MonoBehaviour:
   windForce: 0
   textCoins: {fileID: 1328057414}
   textHits: {fileID: 4005241}
+  isBeingHeld: 0
 --- !u!120 &779413028
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4638,6 +4635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fade: {fileID: 1169190893}
+  FadeObj: {fileID: 1169190894}
 --- !u!1 &1013807532
 GameObject:
   m_ObjectHideFlags: 0
@@ -5424,12 +5422,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4352640305309164981, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
   m_PrefabInstance: {fileID: 1169190892}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1169190894}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1169190894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4352640305309164979, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+  m_PrefabInstance: {fileID: 1169190892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1197433232
 GameObject:
   m_ObjectHideFlags: 0
