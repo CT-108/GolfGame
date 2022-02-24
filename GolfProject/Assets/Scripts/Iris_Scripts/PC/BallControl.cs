@@ -21,7 +21,7 @@ public class BallControl : MonoBehaviour
 
     public List<MaterialType> MaterialTypes;
 
-    private int room = 0;
+    public int room = 0;
     private int _currentLimitHit;
     private int numberHit;
     
@@ -43,7 +43,6 @@ public class BallControl : MonoBehaviour
     public float durationFadeInBall;
     public float power = 10f;
     public float maxDrag = 5f;
-    public float windForce;
 
     public TMP_Text textCoins;
     public TMP_Text textHits;
