@@ -48,7 +48,8 @@ public class BallControl : MonoBehaviour
     public TMP_Text textCoins;
     public TMP_Text textHits;
 
-    private bool isBeingHeld = false;
+    private bool hadHit;
+    public bool isBeingHeld = false;
     private bool isAbleToShoot = true;
     private bool asWon = false;
 
@@ -90,11 +91,8 @@ public class BallControl : MonoBehaviour
         {
 
             isBeingHeld = true;
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                DragStart();
-            }
+            DragStart();
+            
         }
 
         if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
@@ -104,8 +102,7 @@ public class BallControl : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && isBeingHeld == true)
         {
-            DragRealease();
-            
+            DragRealease();            
         }
 
         if (isAbleToShoot && rb.velocity.magnitude == 0 && !asWon)
@@ -118,12 +115,14 @@ public class BallControl : MonoBehaviour
 
     private void DragStart()
     {
+        hadHit = false;
         dragStartPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         lr.positionCount = 1;
         lr.SetPosition(0, dragStartPos);
     }
     private void Dragging()
     {
+        hadHit = true;
         if (isBeingHeld == true)
         {
             Vector2 draggingPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -140,7 +139,10 @@ public class BallControl : MonoBehaviour
         Vector2 clampedForce = Vector2.ClampMagnitude(force, maxDrag) * power;
         rb.AddForce(clampedForce, ForceMode2D.Impulse);
 
-        numberHit++; 
+        if (hadHit)
+            numberHit++;
+        else
+            return;
         isBeingHeld = false;
     }
     
