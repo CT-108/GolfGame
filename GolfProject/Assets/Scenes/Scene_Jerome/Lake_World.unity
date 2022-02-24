@@ -5506,7 +5506,7 @@ MonoBehaviour:
   textCoins: {fileID: 743049631}
   textHits: {fileID: 364557855}
   MaterialTypes:
-  - NameTag: Basic
+  - NameTag: BasicGround
     PhysicsMaterial: {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
     IsInPit: 0
   - NameTag: Sand
@@ -9773,6 +9773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fade: {fileID: 768983031}
+  FadeObj: {fileID: 0}
 --- !u!1 &1594746821
 GameObject:
   m_ObjectHideFlags: 0
