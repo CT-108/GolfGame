@@ -206,6 +206,7 @@ public class BallControl : MonoBehaviour
 
         if (collision.gameObject.tag == "Hole3")
         {
+            Debug.Log("Dans le trou");
             holeTime = 0;
             holeTime++;
             if (holeTime == 1)

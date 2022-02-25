@@ -23,6 +23,7 @@ public class SceneTransition : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         EnabledFade();
+        Debug.Log("Changement de scènes");
     }
 
     void EnabledFade()
