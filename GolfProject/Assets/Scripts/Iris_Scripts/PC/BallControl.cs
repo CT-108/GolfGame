@@ -18,6 +18,7 @@ public class BallControl : MonoBehaviour
     public CamMovement camScript;
     public SceneTransition sceneScript;
     Vector3 newPosition;
+    public GameObject[] Hole;
 
     public List<MaterialType> MaterialTypes;
 
@@ -175,16 +176,10 @@ public class BallControl : MonoBehaviour
                 trail.SetActive(false);
                 sr.DOFade(0, durationFadeInBall);
                 StartCoroutine(FadeIn());
+                Hole[0].SetActive(false);
             }
 
-            if ((numberHit <= minHitGold[0]) && (recoltedCoinsPerLevel > minRecoltedCoinGold[0]))
-                Debug.Log("Médaille or");
-            else
-                Debug.Log("Médaille argent");
-            if (numberHit >= minHitSilver[0] && numberHit <= maxHitSilver[0])
-                Debug.Log("Médaille argent");
-            if (numberHit >= minHitBronze[0] && numberHit < limitHits[(_currentLimitHit)])
-                Debug.Log("Médaille bronze");
+            Medals(0);
         }
 
         if (collision.gameObject.tag == "Hole2")
@@ -202,16 +197,10 @@ public class BallControl : MonoBehaviour
                 trail.SetActive(false);
                 sr.DOFade(0, durationFadeInBall);
                 StartCoroutine(FadeIn());
+                Hole[1].SetActive(false);
             }
 
-            if ((numberHit <= minHitGold[1]) && (recoltedCoinsPerLevel > minRecoltedCoinGold[1]))
-                Debug.Log("Médaille or");
-            else
-                Debug.Log("Médaille argent");
-            if (numberHit >= minHitSilver[1] && numberHit <= maxHitSilver[1])
-                Debug.Log("Médaille argent");
-            if (numberHit >= minHitBronze[1] && numberHit < limitHits[(_currentLimitHit)])
-                Debug.Log("Médaille bronze");
+            Medals(1);
 
         }
 
@@ -220,16 +209,12 @@ public class BallControl : MonoBehaviour
             holeTime = 0;
             holeTime++;
             if (holeTime == 1)
+            {
                 sceneScript.LevelEnding();
-
-            if ((numberHit <= minHitGold[2]) && (recoltedCoinsPerLevel > minRecoltedCoinGold[2]))
-                Debug.Log("Médaille or");
-            else
-                Debug.Log("Médaille argent");
-            if (numberHit >= minHitSilver[2] && numberHit <= maxHitSilver[2])
-                Debug.Log("Médaille argent");
-            if (numberHit >= minHitBronze[2] && numberHit < limitHits[(_currentLimitHit)])
-                Debug.Log("Médaille bronze");
+                Hole[0].SetActive(false);
+            }
+            Medals(2);
+            
         }
 
         if (collision.gameObject.tag == "Room2")
@@ -264,16 +249,28 @@ public class BallControl : MonoBehaviour
             {
                 if (item.isInPit && pitContact == 0)
                 {
+                    pitContact++;
                     rb.velocity = Vector3.zero;
                     rb.inertia = 0;
                     StartCoroutine(BallInPit());
-                    pitContact++;
                 }
 
                 if (item.isInPit == false)
                     rb.sharedMaterial = item.PhysicsMaterial;
             }
         }
+    }
+
+    void Medals(int room)
+    {
+        if ((numberHit <= minHitGold[room]) && (recoltedCoinsPerLevel > minRecoltedCoinGold[room]))
+            Debug.Log("Médaille or");
+        else
+            Debug.Log("Médaille argent");
+        if (numberHit >= minHitSilver[room] && numberHit <= maxHitSilver[room])
+            Debug.Log("Médaille argent");
+        if (numberHit >= minHitBronze[room] && numberHit < limitHits[(_currentLimitHit)])
+            Debug.Log("Médaille bronze");
     }
 
     IEnumerator BallInPit()
@@ -285,8 +282,8 @@ public class BallControl : MonoBehaviour
         sr.DOFade(1, 1);
         rb.inertia = 0.025f;
         yield return new WaitForSeconds(1);
-        isAbleToShoot = true;
         pitContact--;
+        isAbleToShoot = true;
     }
 
     IEnumerator FadeIn()

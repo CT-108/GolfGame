@@ -4330,6 +4330,10 @@ MonoBehaviour:
   - {fileID: 1156687244}
   camScript: {fileID: 181404700}
   sceneScript: {fileID: 181404702}
+  Hole:
+  - {fileID: 1104564953}
+  - {fileID: 420769108}
+  - {fileID: 724247700}
   MaterialTypes:
   - NameTag: BasicGround
     PhysicsMaterial: {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
@@ -4343,6 +4347,7 @@ MonoBehaviour:
   - NameTag: Water
     PhysicsMaterial: {fileID: 6200000, guid: 3e3756a9142fcfe4283e5b9abf2f4152, type: 2}
     isInPit: 0
+  room: 0
   pitContact: 0
   minHitGold: 000000000000000000000000
   minRecoltedCoinGold: 000000000000000000000000
@@ -4358,7 +4363,6 @@ MonoBehaviour:
   durationFadeInBall: 1.5
   power: 10
   maxDrag: 8
-  windForce: 1
   textCoins: {fileID: 7971704578977672838}
   textHits: {fileID: 5881600315919686598}
   isBeingHeld: 0
