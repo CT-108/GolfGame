@@ -3877,7 +3877,12 @@ MonoBehaviour:
   - {fileID: 1156687244}
   camScript: {fileID: 1010615560}
   sceneScript: {fileID: 1010615559}
+  Hole:
+  - {fileID: 1104564953}
+  - {fileID: 420769108}
+  - {fileID: 724247700}
   MaterialTypes: []
+  room: 0
   pitContact: 0
   minHitGold: 000000000000000000000000
   minRecoltedCoinGold: 000000000000000000000000
@@ -3893,7 +3898,6 @@ MonoBehaviour:
   durationFadeInBall: 1.5
   power: 10
   maxDrag: 8
-  windForce: 1
   textCoins: {fileID: 743049631}
   textHits: {fileID: 364557855}
   isBeingHeld: 0

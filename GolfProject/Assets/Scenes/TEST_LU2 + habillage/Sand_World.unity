@@ -4346,7 +4346,7 @@ MonoBehaviour:
     isInPit: 0
   - NameTag: Water
     PhysicsMaterial: {fileID: 6200000, guid: 3e3756a9142fcfe4283e5b9abf2f4152, type: 2}
-    isInPit: 0
+    isInPit: 1
   room: 0
   pitContact: 0
   minHitGold: 000000000000000000000000
