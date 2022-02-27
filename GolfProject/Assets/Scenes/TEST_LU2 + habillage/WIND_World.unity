@@ -3404,7 +3404,7 @@ MonoBehaviour:
   - NameTag: Water
     PhysicsMaterial: {fileID: 6200000, guid: 3e3756a9142fcfe4283e5b9abf2f4152, type: 2}
     isInPit: 1
-  medal: {fileID: 0}
+  medal: {fileID: 1169190895}
   room: 0
   pitContact: 0
   minHitGold: 020000000300000003000000
@@ -3423,7 +3423,7 @@ MonoBehaviour:
   maxDrag: 8
   textCoins: {fileID: 1328057414}
   textHits: {fileID: 4005241}
-  textMedals: {fileID: 0}
+  textMedals: {fileID: 1169190894}
   isBeingHeld: 0
 --- !u!120 &779413028
 LineRenderer:
@@ -5378,6 +5378,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4352640304140211416, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4352640304140211417, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5491,6 +5495,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1169190894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2077355437, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+  m_PrefabInstance: {fileID: 1169190892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169190895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1169190895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2077355435, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+  m_PrefabInstance: {fileID: 1169190892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1181312599
 GameObject:
   m_ObjectHideFlags: 0

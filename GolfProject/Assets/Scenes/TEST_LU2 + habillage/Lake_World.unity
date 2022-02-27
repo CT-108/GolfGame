@@ -5809,6 +5809,7 @@ MonoBehaviour:
   - NameTag: Water
     PhysicsMaterial: {fileID: 6200000, guid: 3e3756a9142fcfe4283e5b9abf2f4152, type: 2}
     isInPit: 1
+  medal: {fileID: 1446719115}
   room: 0
   pitContact: 0
   minHitGold: 020000000200000002000000
@@ -5827,6 +5828,7 @@ MonoBehaviour:
   maxDrag: 8
   textCoins: {fileID: 1608815307}
   textHits: {fileID: 86246357}
+  textMedals: {fileID: 1446719116}
   isBeingHeld: 0
 --- !u!120 &779413028
 LineRenderer:
@@ -8975,7 +8977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -131.16
+      value: -131.16003
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10932,6 +10934,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4352640304140211416, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4352640304140211417, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11036,6 +11042,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1446719115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2077355435, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+  m_PrefabInstance: {fileID: 1446719112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1446719116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2077355437, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+  m_PrefabInstance: {fileID: 1446719112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446719115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1459121673
