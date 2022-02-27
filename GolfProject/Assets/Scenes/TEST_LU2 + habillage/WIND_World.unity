@@ -3404,6 +3404,7 @@ MonoBehaviour:
   - NameTag: Water
     PhysicsMaterial: {fileID: 6200000, guid: 3e3756a9142fcfe4283e5b9abf2f4152, type: 2}
     isInPit: 1
+  medal: {fileID: 0}
   room: 0
   pitContact: 0
   minHitGold: 020000000300000003000000
@@ -3422,6 +3423,7 @@ MonoBehaviour:
   maxDrag: 8
   textCoins: {fileID: 1328057414}
   textHits: {fileID: 4005241}
+  textMedals: {fileID: 0}
   isBeingHeld: 0
 --- !u!120 &779413028
 LineRenderer:
@@ -9347,3 +9349,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &3412712887291692840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756112386536099173, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003444300885249023, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_Name
+      value: Wind
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003444300885249023, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d72a435631b6e5e4d9c19a9ee280ac39, type: 3}
