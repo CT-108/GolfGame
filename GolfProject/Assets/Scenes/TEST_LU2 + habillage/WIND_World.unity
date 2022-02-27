@@ -554,7 +554,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &92549113
 RectTransform:
@@ -2210,8 +2210,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561059025}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 14.66, y: 1.88, z: 0}
-  m_LocalScale: {x: 9.960731, y: 1.8682356, z: 1}
+  m_LocalPosition: {x: 14.8284, y: 2.171, z: 0}
+  m_LocalScale: {x: 10.542438, y: 1.7149918, z: 1}
   m_Children:
   - {fileID: 489506745}
   m_Father: {fileID: 1204486274}
@@ -2282,9 +2282,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: fd5bf6473c090f54a8470a180aee95cd, type: 3}
-  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
+  m_Color: {r: 0.8117648, g: 0.85098046, b: 0.79215693, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2853,7 +2853,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 09ca152417e65134fa545afccf234bf6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3385,7 +3385,10 @@ MonoBehaviour:
   - {fileID: 1869245395}
   camScript: {fileID: 972311958}
   sceneScript: {fileID: 972311960}
-  Hole: []
+  Hole:
+  - {fileID: 1104564953}
+  - {fileID: 575302272}
+  - {fileID: 724247700}
   MaterialTypes:
   - NameTag: BasicGround
     PhysicsMaterial: {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
@@ -3398,7 +3401,7 @@ MonoBehaviour:
     isInPit: 0
   - NameTag: Water
     PhysicsMaterial: {fileID: 6200000, guid: 3e3756a9142fcfe4283e5b9abf2f4152, type: 2}
-    isInPit: 0
+    isInPit: 1
   room: 0
   pitContact: 0
   minHitGold: 020000000300000003000000
@@ -6736,8 +6739,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399693591}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 14.66, y: 1.88, z: 0}
-  m_LocalScale: {x: 9.960731, y: 1.8682356, z: 1}
+  m_LocalPosition: {x: 14.7519, y: 2.2016, z: 0}
+  m_LocalScale: {x: 10.603312, y: 1.6844012, z: 1}
   m_Children:
   - {fileID: 1207498291}
   m_Father: {fileID: 323035539}
@@ -6808,9 +6811,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: fd5bf6473c090f54a8470a180aee95cd, type: 3}
-  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0}
+  m_Color: {r: 0.8588236, g: 0.9058824, b: 0.83921576, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8834,7 +8837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 220.23
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_SizeDelta.y
@@ -8870,11 +8873,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -123
+      value: -116.79999
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -61
+      value: -35.600006
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

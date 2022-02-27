@@ -66,7 +66,7 @@ public class BallControl : MonoBehaviour
         _currentLimitHit = 0;
         numberHit = 0;
         textCoins.text = "" + KeepingVariables.Instance.recoltedCoins;
-        textHits.text = "" + numberHit + " / " + limitHits[(_currentLimitHit)];        
+        textHits.text = "" + numberHit + " / " + limitHits[(_currentLimitHit)] + " coups";        
     }
 
     private void Update()
@@ -110,7 +110,7 @@ public class BallControl : MonoBehaviour
 
         camScript.CamMouvement();
 
-        textHits.text = "" + numberHit + " / " + limitHits[(_currentLimitHit)];
+        textHits.text = "" + numberHit + " / " + limitHits[(_currentLimitHit)] + " coups";
     }
 
     private void DragStart()
