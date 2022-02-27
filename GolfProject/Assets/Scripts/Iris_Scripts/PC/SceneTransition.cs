@@ -9,6 +9,7 @@ public class SceneTransition : MonoBehaviour
 {
     public Image Fade;
     public GameObject FadeObj;
+    public BallControl ballScript;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class SceneTransition : MonoBehaviour
 
     public void FadeComplete()
     {
+        DontDestroyOnLoad(ballScript.audio);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         EnabledFade();
         Debug.Log("Changement de scènes");

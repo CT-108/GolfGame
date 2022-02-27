@@ -8,6 +8,7 @@ using System;
 
 public class BallControl : MonoBehaviour
 {
+    public static BallControl Instance;
     private Rigidbody2D rb;
     public LineRenderer lr;
     public GameObject trail;
@@ -17,9 +18,10 @@ public class BallControl : MonoBehaviour
     Vector2 dragStartPos;
     public CamMovement camScript;
     public SceneTransition sceneScript;
+    public AudioManager audioScript;
     Vector3 newPosition;
     public GameObject[] Hole;
-
+    public GameObject audio;
     public List<MaterialType> MaterialTypes;
 
     public int room = 0;
@@ -56,6 +58,7 @@ public class BallControl : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
     }
@@ -105,7 +108,7 @@ public class BallControl : MonoBehaviour
             DragRealease();            
         }
 
-        if (isAbleToShoot && rb.velocity.magnitude == 0 && !asWon)
+        if (isAbleToShoot && rb.velocity.y > -2 && rb.velocity.y < 0.2 && !asWon)
             HitLimit();
 
         camScript.CamMouvement();
@@ -132,6 +135,7 @@ public class BallControl : MonoBehaviour
     }
     private void DragRealease()
     {
+        audioScript.Play("Tir");
         lr.positionCount = 0;
 
         Vector2 dragReleasePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -167,6 +171,7 @@ public class BallControl : MonoBehaviour
         if (collision.gameObject.tag == "Hole") 
         {        
             asWon = true;
+            audioScript.Play("Victoire");
             camScript.camCanMove = true; 
             StartCoroutine(camScript.CanMoveChrono()); 
             holeTime++; 
@@ -185,6 +190,7 @@ public class BallControl : MonoBehaviour
         if (collision.gameObject.tag == "Hole2")
         {
             asWon = true;
+            audioScript.Play("Victoire");
             holeTime = 0;
             camScript.camCanMove = true;
             StartCoroutine(camScript.CanMoveChrono());
@@ -206,6 +212,7 @@ public class BallControl : MonoBehaviour
 
         if (collision.gameObject.tag == "Hole3")
         {
+            audioScript.Play("Victoire");
             Debug.Log("Dans le trou");
             holeTime = 0;
             holeTime++;
@@ -251,13 +258,17 @@ public class BallControl : MonoBehaviour
                 if (item.isInPit && pitContact == 0)
                 {
                     pitContact++;
+                    audioScript.Play(item.NameTag);
                     rb.velocity = Vector3.zero;
                     rb.inertia = 0;
                     StartCoroutine(BallInPit());
                 }
 
                 if (item.isInPit == false)
+                {
+                    audioScript.Play(item.NameTag);
                     rb.sharedMaterial = item.PhysicsMaterial;
+                }
             }
         }
     }
@@ -304,6 +315,7 @@ public class BallControl : MonoBehaviour
     {
         yield return new WaitForSeconds(waitForLoose);
         Debug.Log("t'es nul");
+        DontDestroyOnLoad(audio);
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }

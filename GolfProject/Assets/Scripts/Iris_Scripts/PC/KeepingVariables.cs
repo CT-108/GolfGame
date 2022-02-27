@@ -7,7 +7,6 @@ public class KeepingVariables : MonoBehaviour
     private static KeepingVariables instance = null;
     public static KeepingVariables Instance => instance;
 
-
     public int recoltedCoins;
 
     private void Awake()
@@ -22,7 +21,5 @@ public class KeepingVariables : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
-
-        // Initialisation du Game Manager...
     }
 }
