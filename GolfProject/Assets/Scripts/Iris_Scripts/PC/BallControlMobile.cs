@@ -24,6 +24,7 @@ public class BallControlMobile : MonoBehaviour
     public GameObject audio;
     public List<MaterialType> MaterialTypes;
     Touch touch;
+    public GameObject medal;
 
     public int room = 0;
     private int _currentLimitHit;
@@ -50,6 +51,7 @@ public class BallControlMobile : MonoBehaviour
 
     public TMP_Text textCoins;
     public TMP_Text textHits;
+    public TMP_Text textMedals;
 
     private bool hadHit;
     public bool isBeingHeld = false;
@@ -279,7 +281,10 @@ public class BallControlMobile : MonoBehaviour
     void Medals(int room)
     {
         if ((numberHit <= minHitGold[room]) && (recoltedCoinsPerLevel > minRecoltedCoinGold[room]))
-            Debug.Log("Médaille or");
+        {
+            medal.SetActive(true);
+            textMedals.text = "MEDAILLE D'OR";
+        }
         else
             Debug.Log("Médaille argent");
         if (numberHit >= minHitSilver[room] && numberHit <= maxHitSilver[room])
@@ -304,7 +309,7 @@ public class BallControlMobile : MonoBehaviour
     IEnumerator FadeIn()
     {
         yield return new WaitForSeconds(waitForFade); //le temps que la cam soit arrivée au level suivant
-        
+        medal.SetActive(false);
         if (room == 0)
             ball.transform.position = startPoints[1].transform.position;
 

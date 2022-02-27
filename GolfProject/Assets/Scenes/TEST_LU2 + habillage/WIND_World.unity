@@ -6111,6 +6111,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 92549113}
     m_Modifications:
+    - target: {fileID: 7971704578504369946, guid: 445ce01161e96e1489a6ea282ddbb349, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.34117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971704578504369946, guid: 445ce01161e96e1489a6ea282ddbb349, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.30980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971704578504369946, guid: 445ce01161e96e1489a6ea282ddbb349, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.027450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971704578504369946, guid: 445ce01161e96e1489a6ea282ddbb349, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4283911943
+      objectReference: {fileID: 0}
     - target: {fileID: 7971704579356160876, guid: 445ce01161e96e1489a6ea282ddbb349, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8939,6 +8955,22 @@ PrefabInstance:
     - target: {fileID: 5881600316109843928, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_Name
       value: Hits
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881600316109843930, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.34117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881600316109843930, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.30980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881600316109843930, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.027450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881600316109843930, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4283911943
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_Pivot.x

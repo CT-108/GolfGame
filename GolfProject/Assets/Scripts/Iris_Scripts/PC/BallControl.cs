@@ -23,6 +23,7 @@ public class BallControl : MonoBehaviour
     public GameObject[] Hole;
     public GameObject audio;
     public List<MaterialType> MaterialTypes;
+    public GameObject medal;
 
     public int room = 0;
     private int _currentLimitHit;
@@ -49,6 +50,7 @@ public class BallControl : MonoBehaviour
 
     public TMP_Text textCoins;
     public TMP_Text textHits;
+    public TMP_Text textMedals;
 
     private bool hadHit;
     public bool isBeingHeld = false;
@@ -171,12 +173,12 @@ public class BallControl : MonoBehaviour
         if (collision.gameObject.tag == "Hole") 
         {        
             asWon = true;
-            audioScript.Play("Victoire");
             camScript.camCanMove = true; 
             StartCoroutine(camScript.CanMoveChrono()); 
             holeTime++; 
             if (holeTime == 1) 
             {
+                audioScript.Play("Victoire");
                 camScript.StartMovingCamera();
                 trail.SetActive(false);
                 sr.DOFade(0, durationFadeInBall);
@@ -190,13 +192,13 @@ public class BallControl : MonoBehaviour
         if (collision.gameObject.tag == "Hole2")
         {
             asWon = true;
-            audioScript.Play("Victoire");
             holeTime = 0;
             camScript.camCanMove = true;
             StartCoroutine(camScript.CanMoveChrono());
             holeTime++;
             if (holeTime == 1)
             {
+                audioScript.Play("Victoire");
                 camScript.startMarker.position = new Vector3(23.53f, 0, -20);
                 camScript.endMarker.position = new Vector3(47.06f, 0, -20);
                 camScript.StartMovingCamera();
@@ -212,12 +214,12 @@ public class BallControl : MonoBehaviour
 
         if (collision.gameObject.tag == "Hole3")
         {
-            audioScript.Play("Victoire");
             Debug.Log("Dans le trou");
             holeTime = 0;
             holeTime++;
             if (holeTime == 1)
             {
+                audioScript.Play("Victoire");
                 sceneScript.LevelEnding();
                 Hole[0].SetActive(false);
             }
@@ -276,13 +278,25 @@ public class BallControl : MonoBehaviour
     void Medals(int room)
     {
         if ((numberHit <= minHitGold[room]) && (recoltedCoinsPerLevel > minRecoltedCoinGold[room]))
-            Debug.Log("Médaille or");
+        {
+            medal.SetActive(true);
+            textMedals.text = "MEDAILLE D'OR";
+        }
         else
-            Debug.Log("Médaille argent");
+        {
+            medal.SetActive(true);
+            textMedals.text = "MEDAILLE D'ARGENT";
+        }
         if (numberHit >= minHitSilver[room] && numberHit <= maxHitSilver[room])
-            Debug.Log("Médaille argent");
+        {
+            medal.SetActive(true);
+            textMedals.text = "MEDAILLE D'ARGENT";
+        }
         if (numberHit >= minHitBronze[room] && numberHit < limitHits[(_currentLimitHit)])
-            Debug.Log("Médaille bronze");
+        {
+            medal.SetActive(true);
+            textMedals.text = "MEDAILLE DE BRONZE";
+        }
     }
 
     IEnumerator BallInPit()

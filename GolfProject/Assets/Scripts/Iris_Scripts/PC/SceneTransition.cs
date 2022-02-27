@@ -22,8 +22,8 @@ public class SceneTransition : MonoBehaviour
 
     public void FadeComplete()
     {
-        DontDestroyOnLoad(ballScript.audio);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        DontDestroyOnLoad(ballScript.audio);
         EnabledFade();
         Debug.Log("Changement de scènes");
     }
