@@ -315,7 +315,7 @@ public class BallControl : MonoBehaviour
     IEnumerator FadeIn()
     {
         yield return new WaitForSeconds(waitForFade); //le temps que la cam soit arrivée au level suivant
-        
+        medal.SetActive(false);
         if (room == 0)
             ball.transform.position = startPoints[1].transform.position;
 
@@ -328,7 +328,6 @@ public class BallControl : MonoBehaviour
     IEnumerator Perdu()
     {
         yield return new WaitForSeconds(waitForLoose);
-        Debug.Log("t'es nul");
         DontDestroyOnLoad(audio);
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);

@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fade: {fileID: 1313200486}
   FadeObj: {fileID: 1418585424}
-  ballScript: {fileID: 0}
+  ballScript: {fileID: 779413029}
 --- !u!1 &191915378
 GameObject:
   m_ObjectHideFlags: 0

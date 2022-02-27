@@ -4899,7 +4899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fade: {fileID: 1169190893}
   FadeObj: {fileID: 1375980818}
-  ballScript: {fileID: 0}
+  ballScript: {fileID: 779413027}
 --- !u!1001 &1024895889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5933,6 +5933,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2077355435, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3813555495862911780, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
       propertyPath: ballScript
       value: 
