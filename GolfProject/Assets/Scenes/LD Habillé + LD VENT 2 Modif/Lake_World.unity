@@ -6009,13 +6009,13 @@ MonoBehaviour:
   linearDragOnAir: 0
   minValueToBeAbleToShoot: 0.2
   durationFadeInBall: 1.5
-  minHitGold: 0
-  minRecoltedCoinGold: 0
-  minHitSilver: 0
-  maxHitSilver: 0
-  minHitBronze: 0
+  minHitGold: 3
+  minRecoltedCoinGold: 2
+  minHitSilver: 4
+  maxHitSilver: 4
+  minHitBronze: 6
   lr: {fileID: 779413028}
-  limitHits: 0a0000000a0000000a000000
+  limitHits: 060000000600000006000000
   power: 10
   maxDrag: 8
   textCoins: {fileID: 743049631}
@@ -8060,7 +8060,7 @@ SpriteRenderer:
   m_Size: {x: 6.78, y: 2.76}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1043021587
@@ -11243,7 +11243,7 @@ SpriteRenderer:
   m_Size: {x: 8.05, y: 3.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1536742177

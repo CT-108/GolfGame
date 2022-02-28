@@ -1072,6 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fade: {fileID: 1313200486}
   FadeObj: {fileID: 1418585424}
+  ballScript: {fileID: 0}
 --- !u!1 &191915378
 GameObject:
   m_ObjectHideFlags: 0
@@ -4330,10 +4331,12 @@ MonoBehaviour:
   - {fileID: 1156687244}
   camScript: {fileID: 181404700}
   sceneScript: {fileID: 181404702}
+  audioScript: {fileID: 0}
   Hole:
   - {fileID: 1104564953}
   - {fileID: 420769108}
   - {fileID: 724247700}
+  audio: {fileID: 0}
   MaterialTypes:
   - NameTag: BasicGround
     PhysicsMaterial: {fileID: 6200000, guid: f5a9dc4eb13d6dd4aa2a46727270e641, type: 2}
@@ -4347,14 +4350,15 @@ MonoBehaviour:
   - NameTag: Water
     PhysicsMaterial: {fileID: 6200000, guid: 3e3756a9142fcfe4283e5b9abf2f4152, type: 2}
     isInPit: 1
+  medal: {fileID: 0}
   room: 0
   pitContact: 0
-  minHitGold: 000000000000000000000000
-  minRecoltedCoinGold: 000000000000000000000000
-  minHitSilver: 000000000000000000000000
-  maxHitSilver: 000000000000000000000000
-  minHitBronze: 000000000000000000000000
-  limitHits: 0a0000000a0000000a000000
+  minHitGold: 020000000200000003000000
+  minRecoltedCoinGold: 020000000200000002000000
+  minHitSilver: 030000000300000004000000
+  maxHitSilver: 030000000300000004000000
+  minHitBronze: 050000000500000006000000
+  limitHits: 050000000500000006000000
   waitForLoose: 1
   waitForFade: 2.3
   linearDragOnGround: 2
@@ -4365,6 +4369,7 @@ MonoBehaviour:
   maxDrag: 8
   textCoins: {fileID: 7971704578977672838}
   textHits: {fileID: 5881600315919686598}
+  textMedals: {fileID: 0}
   isBeingHeld: 0
 --- !u!1 &783887105
 GameObject:
