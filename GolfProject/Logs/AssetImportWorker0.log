@@ -1,71 +1,71 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.13f1 (71691879b7f5) revision 7432472'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19042.1526; Version 2009; 64bit' Language: 'fr' Physical Memory: 32716 MB
+OS: 'Windows 10 Home; OS build 19043.1526; Version 2009; 64bit' Language: 'fr' Physical Memory: 16309 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Editor\Unity.exe
+C:\Program Files\2020.3.13f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/uvase/Documents/Golf/Golfgame/GolfProject
+C:/Users/jeuxi/Documents/GitHub/GolfGame/GolfProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60387
-Successfully changed project path to: C:/Users/uvase/Documents/Golf/Golfgame/GolfProject
-C:/Users/uvase/Documents/Golf/Golfgame/GolfProject
+64226
+Successfully changed project path to: C:/Users/jeuxi/Documents/GitHub/GolfGame/GolfProject
+C:/Users/jeuxi/Documents/GitHub/GolfGame/GolfProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 81.42 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 39.60 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.13f1 (71691879b7f5)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/uvase/Documents/Golf/Golfgame/GolfProject/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/2020.3.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/jeuxi/Documents/GitHub/GolfGame/GolfProject/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f08)
+    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
     Vendor:   
-    VRAM:     5980 MB
-    Driver:   27.21.14.5671
+    VRAM:     5991 MB
+    Driver:   30.0.14.7212
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
+Mono path[0] = 'C:/Program Files/2020.3.13f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/2020.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/2020.3.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56476
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001802 seconds.
+Register platform support module: C:/Program Files/2020.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001666 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 37.79 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 40.75 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.795 seconds
+- Completed reload, in  0.885 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006502 seconds.
+Registered in 0.003245 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 37.28 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 38.47 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.002 seconds
+- Completed reload, in  1.032 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.51 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.45 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2276 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 101.0 MB.
-System memory in use after: 101.1 MB.
+System memory in use before: 101.4 MB.
+System memory in use after: 101.6 MB.
 
-Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 2718.
-Total: 2.180200 ms (FindLiveObjects: 0.265900 ms CreateObjectMapping: 0.063300 ms MarkObjects: 1.788100 ms  DeleteObjects: 0.062100 ms)
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 2723.
+Total: 2.367900 ms (FindLiveObjects: 0.216200 ms CreateObjectMapping: 0.054700 ms MarkObjects: 2.015500 ms  DeleteObjects: 0.080400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -79,137 +79,145 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Coin.png
-  artifactKey: Guid(99af61578a2317c449e29344b2b17479) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Coin.png using Guid(99af61578a2317c449e29344b2b17479) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bedd748c3943859717d3f1e2ba1785d7') in 0.066511 seconds 
-  Import took 0.069712 seconds .
+  path: Assets/Prefabs/ButtonPause.prefab
+  artifactKey: Guid(44ea7e17e3293ad4a88cb8efd02e84a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/ButtonPause.prefab using Guid(44ea7e17e3293ad4a88cb8efd02e84a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0be8b2231f3b578865563673db8e08a2') in 0.052269 seconds 
+  Import took 0.160871 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.159909 seconds.
-  path: Assets/Scenes
-  artifactKey: Guid(6ea8eb55de2f8484f9e5f5c9446ff5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(6ea8eb55de2f8484f9e5f5c9446ff5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e056d1b2a6ff03a57ee1dc17d0a8330') in 0.002209 seconds 
-  Import took 0.005065 seconds .
+  Time since last request: 30.260838 seconds.
+  path: Assets/Scenes/TEST_LU2 + habillage/Lake_World.unity
+  artifactKey: Guid(4e7fb3c8039b3204c8a9f902c3fe97aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TEST_LU2 + habillage/Lake_World.unity using Guid(4e7fb3c8039b3204c8a9f902c3fe97aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaaa1b74c58bf7f1235e642795d0a3e8') in 0.002755 seconds 
+  Import took 0.005854 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.009329 seconds.
-  path: Assets/Scenes
-  artifactKey: Guid(6ea8eb55de2f8484f9e5f5c9446ff5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(6ea8eb55de2f8484f9e5f5c9446ff5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e056d1b2a6ff03a57ee1dc17d0a8330') in 0.001878 seconds 
-  Import took 0.004296 seconds .
+  Time since last request: 0.369104 seconds.
+  path: Assets/Scenes/TEST_LU2 + habillage/Sand_World.unity
+  artifactKey: Guid(0ec03910c0ecdc54ba14dfb276b11028) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TEST_LU2 + habillage/Sand_World.unity using Guid(0ec03910c0ecdc54ba14dfb276b11028) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8916f95bba7e68dd1b063cc648749ad') in 0.003289 seconds 
+  Import took 0.006698 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.565732 seconds.
-  path: Assets/Scenes/LD Habillé + LD VENT 2 Modif
-  artifactKey: Guid(21c88a14d1ce82a419083324fa70b258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LD Habillé + LD VENT 2 Modif using Guid(21c88a14d1ce82a419083324fa70b258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d90c12921b3643d020f3842e12293b4') in 0.002441 seconds 
-  Import took 0.005330 seconds .
+  Time since last request: 42.415857 seconds.
+  path: Assets/Scenes/TEST_LU2 + habillage/WIND_World.unity
+  artifactKey: Guid(3e80c87d4a215a74696c83e9e31c72d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TEST_LU2 + habillage/WIND_World.unity using Guid(3e80c87d4a215a74696c83e9e31c72d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '837b7dc14c2e73bda8b3cf7d9622f3e4') in 0.005977 seconds 
+  Import took 0.010718 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.203730 seconds.
-  path: Assets/Scenes/LD Habillé + LD VENT 2 Modif/WIND_World.unity
-  artifactKey: Guid(effa560dcdd75c043bfae24d6c13fa3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LD Habillé + LD VENT 2 Modif/WIND_World.unity using Guid(effa560dcdd75c043bfae24d6c13fa3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea288dafb018f2bda1e020e818c48c7d') in 0.002973 seconds 
-  Import took 0.005896 seconds .
+  Time since last request: 33.241208 seconds.
+  path: Assets/Scenes/TEST_LU2 + habillage/Ice_World.unity
+  artifactKey: Guid(26b26163271299646bcc328b3a5c4441) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TEST_LU2 + habillage/Ice_World.unity using Guid(26b26163271299646bcc328b3a5c4441) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31ae3c8529772c334d0a698071ce3f67') in 0.008085 seconds 
+  Import took 0.128567 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.670138 seconds.
-  path: Assets/Scenes/LD Habillé + LD VENT 2 Modif/Sand_World.unity
-  artifactKey: Guid(28e08515fd931b54bbc3b932b104b993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LD Habillé + LD VENT 2 Modif/Sand_World.unity using Guid(28e08515fd931b54bbc3b932b104b993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a851ba8bdd724c9082e23d0eb69b0016') in 0.002631 seconds 
-  Import took 0.005680 seconds .
+  Time since last request: 9.506766 seconds.
+  path: Assets/Scenes/TEST_LU2 + habillage/Sand_World.unity
+  artifactKey: Guid(0ec03910c0ecdc54ba14dfb276b11028) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TEST_LU2 + habillage/Sand_World.unity using Guid(0ec03910c0ecdc54ba14dfb276b11028) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2993a9bb5d60efa4610e1ef0d022ba18') in 0.003322 seconds 
+  Import took 0.008379 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.986650 seconds.
-  path: Assets/Scenes/TEST_LU3
-  artifactKey: Guid(470bb1661b7d3d44681eefc0f9df16be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/TEST_LU3 using Guid(470bb1661b7d3d44681eefc0f9df16be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f1a252c223b4845114e1b7977d25718') in 0.002466 seconds 
-  Import took 0.005349 seconds .
+  Time since last request: 141.428575 seconds.
+  path: Assets/Scenes/TEST_LU2 + habillage/Lake_World.unity
+  artifactKey: Guid(4e7fb3c8039b3204c8a9f902c3fe97aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TEST_LU2 + habillage/Lake_World.unity using Guid(4e7fb3c8039b3204c8a9f902c3fe97aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40c66b7b984f03af2ff974287506a7dd') in 0.006509 seconds 
+  Import took 0.012738 seconds .
 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.844803 seconds.
-  path: Assets/Scenes/TEST_LU3/WIND_World.unity
-  artifactKey: Guid(d59845e6e25f59d468aab96020d9ffac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/TEST_LU3/WIND_World.unity using Guid(d59845e6e25f59d468aab96020d9ffac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa0b9d97cd550d4552a5fed5af934b1a') in 0.002693 seconds 
-  Import took 0.005753 seconds .
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003853 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.844 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2251 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.6 MB.
+System memory in use after: 99.9 MB.
 
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2726.
+Total: 2.308700 ms (FindLiveObjects: 0.229200 ms CreateObjectMapping: 0.057000 ms MarkObjects: 1.994000 ms  DeleteObjects: 0.027500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.009980 seconds.
-  path: Assets/Scenes/TEST_LU3/Sand_World.unity
-  artifactKey: Guid(9196986c0d5425f4b8cf9e556f1b7a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/TEST_LU3/Sand_World.unity using Guid(9196986c0d5425f4b8cf9e556f1b7a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46bbd36d221925b136021950adb4dc30') in 0.002607 seconds 
-  Import took 0.005508 seconds .
+  Time since last request: 170.080942 seconds.
+  path: Assets/Scenes/Menus/Menus.unity
+  artifactKey: Guid(b05c0f71f82bd3b469c6bdc600cca2c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menus/Menus.unity using Guid(b05c0f71f82bd3b469c6bdc600cca2c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c723b1a75aff27a439838f925d589026') in 0.015043 seconds 
+  Import took 0.020134 seconds .
 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.866614 seconds.
-  path: Assets/Scenes/TEST_LU3/Lake_World.unity
-  artifactKey: Guid(d757c9dcd3c969a40809b4e6ead3d965) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/TEST_LU3/Lake_World.unity using Guid(d757c9dcd3c969a40809b4e6ead3d965) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa22fa94040452fa882245bddabbe9d0') in 0.002737 seconds 
-  Import took 0.005709 seconds .
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003236 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.854 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2251 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.7 MB.
+System memory in use after: 99.9 MB.
 
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2729.
+Total: 2.434700 ms (FindLiveObjects: 0.252800 ms CreateObjectMapping: 0.057300 ms MarkObjects: 2.105600 ms  DeleteObjects: 0.018000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.888069 seconds.
-  path: Assets/Scenes/TEST_LU3/Ice_World.unity
-  artifactKey: Guid(cfd2173f580e73048902b7f57152d521) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/TEST_LU3/Ice_World.unity using Guid(cfd2173f580e73048902b7f57152d521) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39198799ec4c96b4d519cd3b1a70928f') in 0.002591 seconds 
-  Import took 0.005542 seconds .
+Received Prepare
+Refreshing native plugins compatible for Editor in 3.31 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 55.4 MB.
+System memory in use after: 55.6 MB.
 
-========================================================================
-Received Import Request.
-  Time since last request: 4.154329 seconds.
-  path: Assets/Scenes/Scene_Jerome
-  artifactKey: Guid(1fc451254299d0e40bd07c79c381e086) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scene_Jerome using Guid(1fc451254299d0e40bd07c79c381e086) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b16a49fd151ddf085fbac5f975b668bc') in 0.002399 seconds 
-  Import took 0.005410 seconds .
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2729.
+Total: 2.307000 ms (FindLiveObjects: 0.208900 ms CreateObjectMapping: 0.055100 ms MarkObjects: 2.026200 ms  DeleteObjects: 0.015800 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.898658 seconds.
-  path: Assets/Scenes/Scene_Jerome/Scene_Jerome_PC.unity
-  artifactKey: Guid(1e819e89a32a8894f954eb3657bb1220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Scene_Jerome/Scene_Jerome_PC.unity using Guid(1e819e89a32a8894f954eb3657bb1220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bc25ab6be41014f5cb41449e08ae137') in 0.002945 seconds 
-  Import took 0.006131 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.441787 seconds.
-  path: Assets/Scenes/LD Habillé + LD VENT 2 Modif/Ice_World.unity
-  artifactKey: Guid(c1057393f8d79f348b2f1daedda7e19f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LD Habillé + LD VENT 2 Modif/Ice_World.unity using Guid(c1057393f8d79f348b2f1daedda7e19f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9b95ee03cd1104acee80f3a3291fd82') in 0.003109 seconds 
-  Import took 0.006081 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.972310 seconds.
-  path: Assets/Scenes/LD Habillé + LD VENT 2 Modif/Lake_World.unity
-  artifactKey: Guid(12f9ed26dd40a9042b4d07df3dd50082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LD Habillé + LD VENT 2 Modif/Lake_World.unity using Guid(12f9ed26dd40a9042b4d07df3dd50082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3de600bcc6087cb15d1c92a1c32d38a0') in 0.002543 seconds 
-  Import took 0.005432 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 122.014268 seconds.
-  path: Assets/Scenes/LD Habillé + LD VENT 2 Modif/Sand_World.unity
-  artifactKey: Guid(28e08515fd931b54bbc3b932b104b993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LD Habillé + LD VENT 2 Modif/Sand_World.unity using Guid(28e08515fd931b54bbc3b932b104b993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd308809af7206941fcfe1a6264a9c19f') in 0.002958 seconds 
-  Import took 0.006507 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002362 seconds.
-  path: Assets/Scenes/LD Habillé + LD VENT 2 Modif/Sand_World.unity
-  artifactKey: Guid(28e08515fd931b54bbc3b932b104b993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/LD Habillé + LD VENT 2 Modif/Sand_World.unity using Guid(28e08515fd931b54bbc3b932b104b993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd308809af7206941fcfe1a6264a9c19f') in 0.002443 seconds 
-  Import took 0.005573 seconds .
-
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

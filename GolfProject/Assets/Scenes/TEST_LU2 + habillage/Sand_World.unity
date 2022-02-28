@@ -708,7 +708,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1792, y: 828}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -1679,10 +1679,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 4352640304140211416, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
-      propertyPath: m_SortingOrder
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 4352640304140211417, guid: 71523b37d4f901e489327522b4dfabb1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9479,11 +9475,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 274.55
+      value: 266.92
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 56.2
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9515,11 +9511,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -160.27002
+      value: -144.35004
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -64.100006
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 5881600316109843931, guid: 297eef80a666e3242bd58902fbab8dbb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

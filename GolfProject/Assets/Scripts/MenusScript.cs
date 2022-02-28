@@ -87,7 +87,7 @@ public class MenusScript : MonoBehaviour
     {
         Fader.DOFade(1, FadeInTime);
         yield return new WaitForSeconds(FadeInTime);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     IEnumerator FadeInOptions()
