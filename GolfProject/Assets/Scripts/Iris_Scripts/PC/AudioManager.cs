@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        if (MenusScript.IsMusicPlaying == true)
         Play("Music");
     }
 
