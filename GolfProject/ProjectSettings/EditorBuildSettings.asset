@@ -9,16 +9,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/Menus.unity
     guid: b05c0f71f82bd3b469c6bdc600cca2c0
   - enabled: 1
-    path: Assets/Scenes/TEST_LU2 + habillage/Sand_World.unity
+    path: Assets/Scenes/Level/Sand_World.unity
     guid: 0ec03910c0ecdc54ba14dfb276b11028
   - enabled: 1
-    path: Assets/Scenes/TEST_LU2 + habillage/Ice_World.unity
+    path: Assets/Scenes/Level/Ice_World.unity
     guid: 26b26163271299646bcc328b3a5c4441
   - enabled: 1
-    path: Assets/Scenes/TEST_LU2 + habillage/Lake_World.unity
+    path: Assets/Scenes/Level/Lake_World.unity
     guid: 4e7fb3c8039b3204c8a9f902c3fe97aa
   - enabled: 1
-    path: Assets/Scenes/TEST_LU2 + habillage/WIND_World.unity
+    path: Assets/Scenes/Level/WIND_World.unity
     guid: 3e80c87d4a215a74696c83e9e31c72d1
   - enabled: 0
     path: 

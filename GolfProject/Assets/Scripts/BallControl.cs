@@ -110,7 +110,7 @@ public class BallControl : MonoBehaviour
             DragRealease();            
         }
 
-        if (isAbleToShoot && rb.velocity.y > -2 && rb.velocity.y < 0.2 && !asWon)
+        if (isAbleToShoot && rb.velocity.y == 0 && !asWon)
             HitLimit();
 
         camScript.CamMouvement();
